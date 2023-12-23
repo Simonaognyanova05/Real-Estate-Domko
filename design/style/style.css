@@ -208,3 +208,95 @@ header .form .btn:hover {
     font-size: 21px;
 }
 
+.section .heading{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0rem;
+}
+
+section .heading .title{
+    font-size: 28px;
+    line-height: 34px;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #2c2855bb;
+    text-align: center;
+    letter-spacing: 4px;
+}
+
+section .heading .subtitle{
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 400;
+    color: #2c2855bb;
+    text-align: center;
+}
+
+.latest{
+    margin-top: 10rem;
+    background-color: #fafafa;
+}
+
+.latest .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.latest .items{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
+    gap: 1rem;
+    overflow: hidden;
+}
+.latest .items .card{
+    width: 100%;
+    margin-bottom: 2rem;
+    overflow: hidden;
+   
+}
+
+.latest .items .image{
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 90ms;
+
+}
+
+
+.latest .items .image img{
+    min-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.latest .items .image:hover img{
+    transform: scale(1.08);
+}
+.latest .content{
+    padding: 1rem;
+}
+
+.latest .content .content-flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.latest .flex-content h4{
+    font-size: 22px;
+    font-weight: 500;
+    color: #2c2855;
+}
+.latest .content p{
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    width: 90%;
+    padding: 0.5rem 0rem;
+}
