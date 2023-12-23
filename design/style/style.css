@@ -95,6 +95,20 @@ header .content p {
     color: #eee;
 }
 
+header .content .btn-more {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 14px;
+    color: #2c2855;
+    background-color: #fff;
+    padding: 0.65rem 1.6rem;
+    border-radius: 1.5rem;
+    border: none;
+    cursor: pointer;
+    width: fit-content;
+    margin-top: 1.2rem;
+}
+
 header .form {
     position: absolute;
     bottom: 0;
@@ -193,3 +207,4 @@ header .form .btn:hover {
     color: #fff;
     font-size: 21px;
 }
+
