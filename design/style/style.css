@@ -308,7 +308,99 @@ section .heading .subtitle {
     color: #2c2855;
 }
 
-.latest .content p{
+.latest .content p {
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    width: 90%;
+    padding: 0.5rem 0rem;
+}
+
+
+
+
+
+.client {
+    margin-top: 10rem;
+    background-color: #f1f1f1;
+    padding: 2rem 0rem;
+}
+
+.client .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.client .items {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    overflow: hidden;
+    padding: 2rem;
+}
+
+.client .items .card {
+    width: 100%;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    box-shadow: 1px 1px 4px #aaa;
+    border-radius: 5px;
+    border-right: 2px solid #aaa;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    padding: 2rem;
+    background-color: #fff;
+}
+
+
+.client .items img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    object-fit: cover;
+}
+
+.client .stars {
+    display: flex;
+    gap: 0.2rem;
+}
+
+.client .stars span {
+    font-size: 20px;
+    color: #2c2855bb;
+}
+
+.client .stars .active {
+    color: #2c2855;
+}
+
+.client p {
+    font-size: 17px;
+    line-height: 23px;
+    color: #2c2855;
+    text-align: center;
+}
+
+
+
+.latest .content-flex h4 {
+    font-size: 20px;
+    font-weight: 400;
+    color: #2c2855bb;
+}
+
+.latest .content-flex .id {
+    font-weight: 500;
+    color: #2c2855;
+}
+
+.latest .content p {
     font-size: 14px;
     font-weight: 400;
     color: #333;
