@@ -1,0 +1,19 @@
+{
+  "name": "graduation-project",
+  "version": "1.0.0",
+  "description": "This is my final project at school.\r The subject is \"Real estate company - Domko\".\r I will use HTML, CSS, JavaScript and MongoDb.\r The plan is to create design first then to do functionality.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "express": "^4.18.2",
+    "express-handlebars": "^7.1.2",
+    "express-session": "^1.17.3",
+    "mongoose": "^8.0.3"
+  }
+}

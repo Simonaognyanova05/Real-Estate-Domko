@@ -5,260 +5,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style/style.css">
-    <title>Real Estate Agency | Domko</title>
+    <title>Domko</title>
 </head>
 
 <body>
-    <div class="navbar">
-        <nav class="container">
-            <div class="site-logo">
-                <div class="link-logo">SM&JS</div>
-            </div>
-            <ul class="navigation">
-                <li class="link"><a href="#home">Home</a></li>
-                <li class="link"><a href="#blog">Blog</a></li>
-                <li class="link"><a href="#about">About Us</a></li>
-                <li class="link"><a href="#contact">Contact Us</a></li>
-            </ul>
-        </nav>
-    </div>
-
-    <header class="header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
         <div class="container">
-            <div class="header-bg">
-                <div class="content">
-                    <h1>Own your <span>dream</span> apartament with <strong>Domko</strong></h1>
-                    <p>Sale, Rent and more modern real estate at lowest price</p>
-                    <button class="btn-more">More Info</button>
-                </div>
+            <a class="navbar-brand" href="#">
 
-                <div class="form">
-                    <form>
-                        <div class="group">
-                            <input type="text" id="location" class="input">
-                            <label for="location" class="label">City or Street</label>
-                            <p>Where you want live?</p>
-                        </div>
-                        <div class="group">
-                            <input type="text" id="min" class="input">
-                            <label for="min" class="label">Min Price</label>
-                            <p>Choose minimum price</p>
-                        </div>
-                        <div class="group">
-                            <input type="text" id="max" class="input">
-                            <label for="max" class="label">Max price</label>
-                            <p>Choose maximum price</p>
-                        </div>
-                        <div class="flex-group">
-                            <div class="flex-col">
-                                <input type="radio" name="salerent" id="sale">
-                                <label for="sale">Sale</label>
-                            </div>
-                            <div class="flex-col">
-                                <input type="radio" name="salerent" id="rent">
-                                <label for="rent">Rent</label>
-                            </div>
-                            <p>Choose beween Sale or Rent</p>
-                        </div>
-                    </form>
-                    <button class="btn"><i class="fa fa-search"></i></button>
-                </div>
+                <img src="./img/logo.png" alt="logo" class="w-50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Popular</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Review</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Questions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn text-white bg-dark px-3" href="#">Review</a>
+                    </li>
+                </ul>
+                <button class="btn btn-outline-success" type="submit">Search</button>
             </div>
         </div>
-    </header>
-
-    <section class="latest" id="latest">
-        <div class="container">
-            <div class="heading">
-                <h1 class="title">Latest Apartaments</h1>
-                <p class="subtitle">Check our list of luxary apartments in this week</p>
-            </div>
-            <div class="items">
-                <div class="card">
-                    <div class="image">
-                        <img src="./img/apartment1.jpg" alt="Luxary apartament 1">
-                    </div>
-                    <div class="content">
-                        <div class="content-flex">
-                            <h4 class="id">#601</h4>
-                            <h4>$149999</h4>
-                        </div>
-                        <p>Maraketch St - Dubai, UAE</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="image">
-                        <img src="./img/apartment1.jpg" alt="Luxary apartament 1">
-                    </div>
-                    <div class="content">
-                        <div class="content-flex">
-                            <h4 class="id">#601</h4>
-                            <h4>$149999</h4>
-                        </div>
-                        <p>Maraketch St - Dubai, UAE</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="image">
-                        <img src="./img/apartment1.jpg" alt="Luxary apartament 1">
-                    </div>
-                    <div class="content">
-                        <div class="content-flex">
-                            <h4 class="id">#601</h4>
-                            <h4>$149999</h4>
-                        </div>
-                        <p>Maraketch St - Dubai, UAE</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="client" id="client">
-        <div class="container">
-            <div class="heading">
-                <h1 class="title">Waht OUR CLIENT SAY:</h1>
-            </div>
-            <div class="items">
-                <div class="card">
-                    <img src="./img/client-1.jpg" alt="John Smith">
-
-                    <div class="stars">
-                        <span class="active"><i class="fa fa-star"></i></span>
-                        <span class="active"><i class="fa fa-star"></i></span>
-                        <span class="active"><i class="fa fa-star"></i></span>
-                        <span class="active"><i class="fa fa-star"></i></span>
-                        <span class=""><i class="fa fa-star"></i></span>
-
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam minima ut iusto eveniet
-                        reiciendis. Culpa quae animi quas suscipit! Dolore aperiam eveniet ipsam facere voluptas ad!
-                        Magnam veniam atque cupiditate.</p>
-                </div>
-
-                <div class="card">
-                    <img src="./img/client-1.jpg" alt="John Smith">
-
-                    <div class="stars">
-                        <span class="active"><i class="fa fa-star"></i></span>
-                        <span class="active"><i class="fa fa-star"></i></span>
-                        <span class="active"><i class="fa fa-star"></i></span>
-                        <span class="active"><i class="fa fa-star"></i></span>
-                        <span class=active"><i class="fa fa-star"></i></span>
-
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam minima ut iusto eveniet
-                        reiciendis. Culpa quae animi quas suscipit! Dolore aperiam eveniet ipsam facere voluptas ad!
-                        Magnam veniam atque cupiditate.</p>
-                </div>
-
-                <div class="card">
-                    <img src="./img/client-1.jpg" alt="John Smith">
-
-                    <div class="stars">
-                        <span class="active"><i class="fa fa-star"></i></span>
-                        <span class="active"><i class="fa fa-star"></i></span>
-                        <span class="active"><i class="fa fa-star"></i></span>
-                        <span class="active"><i class="fa fa-star"></i></span>
-                        <span class=""><i class="fa fa-star"></i></span>
-
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam minima ut iusto eveniet
-                        reiciendis. Culpa quae animi quas suscipit! Dolore aperiam eveniet ipsam facere voluptas ad!
-                        Magnam veniam atque cupiditate.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="heading">
-                <h1 class="title">Contact Us</h1>
-                <div class="subtitle">We work 7/7 day in week</div>
-            </div>
-            <div class="items">
-                <div class="info">
-                    <h1>
-                        <div class="site-logo">
-                            <div class="link-logo">SM&JS</div>
-                        </div>
-                    </h1>
-                    <p>
-                        we are Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, ipsam?
-                    </p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus blanditiis deleniti
-                        perspiciatis aut illo dolorem rerum, hic ab sint ex?</p>
-                </div>
-
-                <div class="contact-form">
-                    <form action="" method="POST">
-                        <div class="row">
-                            <div class="input-col">
-                                <input type="text" placeholder="Your Email">
-                                <i class="fa fa-at"></i>
-                            </div>
-                            <div class="input-col">
-                                <input type="text" placeholder="Your Phone">
-                                <i class="fa fa-phone"></i>
-                            </div>
-                        </div>
-                        <div class="textarea-col">
-                            <textarea name="" id="" cols="30" rows="10"></textarea>
-                        </div>
-                        <div class="btn-col">
-                            <button class="btn-cancel">Cancel</button>
-                            <button class="btn-contact">Contact Us</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="items">
-
-                <div class="col">
-                    <h4 class="site-logo">
-                        <a href="#" class="logo-link">SM&JS</a>
-                    </h4>
-                </div>
-                <div class="col">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Our Blog</a></li>
-                        <li><a href="#">Our Team</a></li>
-                    </ul>
-                </div>
-                <div class="col">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="#">FAGs</a></li>
-                        <li><a href="#">Terms and Conditions</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                    </ul>
-                </div>
-
-                <div class="col">
-                    <h4>Ressources</h4>
-                    <ul>
-                        <li><a href="#">Social Media</a></li>
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Our Partnerships</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="rights">
-                Copyright 2024 Created By Simona Ognyanova. All rigths reserved.
-            </div>
-        </div>
-    </footer>
+    </nav>
 </body>
 
 </html>
