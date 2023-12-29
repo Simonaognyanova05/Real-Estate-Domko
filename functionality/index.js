@@ -9,6 +9,8 @@ const userHome = require('./src/user/home');
 //admin
 const adminHome = require('./src/admin/home');
 const adminRegister = require('./src/admin/register');
+const adminLogin = require('./src/admin/login');
+
 const { registerAdmin } = require('./src/admin/requests/register');
 
 
@@ -35,5 +37,6 @@ app.post('/admin/register', async (req, res) => {
     await registerAdmin(req, res);
 });
 
+app.get('/admin/login', adminLogin);
 
 app.listen(3000);
