@@ -1,3 +1,7 @@
 module.exports = (req, res) => {
-    res.render('admin/home', { title: 'Недвижими имоти "Домко"', admin: req.session.admin });
+    if(req.session.admin){
+        res.render('admin/home', { title: 'Недвижими имоти "Домко"', admin: req.session.admin });
+    }else{
+        res.render('admin/login', { title: 'Недвижими имоти "Домко"', admin: req.session.admin });
+    }
 }
