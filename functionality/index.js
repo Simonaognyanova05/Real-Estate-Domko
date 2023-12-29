@@ -5,6 +5,7 @@ const path = require('path');
 
 //user
 const userHome = require('./src/user/home');
+const userRegister = require('./src/user/register');
 
 //admin
 const adminHome = require('./src/admin/home');
@@ -29,7 +30,10 @@ app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
 app.use('/content', express.static('static'));
+
 app.get('/', userHome);
+app.get('/user/register', userRegister);
+
 
 app.get('/admin', adminHome);
 app.get('/admin/register', adminRegister);
