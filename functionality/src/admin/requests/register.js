@@ -17,6 +17,11 @@ async function registerAdmin(req, res){
         return;
     }
 
+    if(password.length < 8){
+        res.send('Дължината на паролата трябва да е минимум 8 символа!');
+        return;
+    }
+
     const hashedPass = await bcrypt.hash(password, 10);
 
     try{

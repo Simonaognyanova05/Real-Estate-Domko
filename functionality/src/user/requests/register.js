@@ -17,6 +17,11 @@ async function registerUser(req, res){
         return;
     }
 
+    if(password.length < 6){
+        res.send('Дължината на паролата трябва да е минимум 6 символа!');
+        return;
+    }
+
     const hashedPass = await bcrypt.hash(password, 10);
 
     try{
