@@ -26,7 +26,7 @@ async function registerAdmin(req, res){
 
         await admin.save();
         req.session.admin = admin;
-        res.redirect('/');
+        res.redirect('/admin');
     }catch(err){
         res.send(err);
     }
