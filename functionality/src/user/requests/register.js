@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
-const Admin = require('../models/admin');
+const User = require('../models/user');
 
 const connectionString = 'mongodb://localhost:27017/domko';
 
@@ -20,13 +20,13 @@ async function registerUser(req, res){
     const hashedPass = await bcrypt.hash(password, 10);
 
     try{
-        const admin = new Admin({
+        const user = new User({
             email, username, hashedPass
         });
 
-        await admin.save();
-        req.session.admin = admin;
-        res.redirect('/admin');
+        await user.save();
+        req.session.user = user;
+        res.redirect('/');
     }catch(err){
         res.send(err);
     }

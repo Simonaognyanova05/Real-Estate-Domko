@@ -6,6 +6,7 @@ const path = require('path');
 //user
 const userHome = require('./src/user/home');
 const userRegister = require('./src/user/register');
+const { registerUser } = require('./src/user/requests/register');
 
 //admin
 const adminHome = require('./src/admin/home');
@@ -33,7 +34,9 @@ app.use('/content', express.static('static'));
 
 app.get('/', userHome);
 app.get('/user/register', userRegister);
-
+app.post('/user/register', async (req, res) => {
+    await registerUser(req, res);
+});
 
 app.get('/admin', adminHome);
 app.get('/admin/register', adminRegister);
