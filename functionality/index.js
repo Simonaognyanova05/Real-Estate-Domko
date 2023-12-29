@@ -18,6 +18,7 @@ const adminLogin = require('./src/admin/login');
 
 const { registerAdmin } = require('./src/admin/requests/register');
 const { loginAdmin } = require('./src/admin/requests/login');
+const { logoutUser } = require('./src/user/logout');
 
 
 const app = express();
@@ -44,6 +45,10 @@ app.get('/user/login', userLogin);
 app.post('/user/login', async (req, res) => {
     await loginUser(req, res);
 });
+app.get('/user/logout', (req, res) => {
+    logoutUser(req, res);
+})
+
 
 app.get('/admin', adminHome);
 app.get('/admin/register', adminRegister);
