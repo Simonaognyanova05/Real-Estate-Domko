@@ -6,7 +6,10 @@ const path = require('path');
 //user
 const userHome = require('./src/user/home');
 const userRegister = require('./src/user/register');
+const userLogin = require('./src/user/login');
 const { registerUser } = require('./src/user/requests/register');
+const { loginUser } = require('./src/user/requests/login');
+
 
 //admin
 const adminHome = require('./src/admin/home');
@@ -36,6 +39,10 @@ app.get('/', userHome);
 app.get('/user/register', userRegister);
 app.post('/user/register', async (req, res) => {
     await registerUser(req, res);
+});
+app.get('/user/login', userLogin);
+app.post('/user/login', async (req, res) => {
+    await loginUser(req, res);
 });
 
 app.get('/admin', adminHome);

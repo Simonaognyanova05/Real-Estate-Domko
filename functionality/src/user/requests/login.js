@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
-const Admin = require('../models/admin');
+const User = require('../models/user');
 
 const connectionString = 'mongodb://localhost:27017/domko';
 
@@ -13,11 +13,11 @@ async function loginUser(req, res){
     const { username, password } = req.body;
 
     try{
-        const admin = await Admin.findOne({ username });
-        const comparedPass = await bcrypt.compare(password, admin.hashedPass);
-        if(admin && comparedPass){
-            req.session.admin = admin.toJSON();
-            res.redirect('/admin');
+        const user = await User.findOne({ username });
+        const comparedPass = await bcrypt.compare(password, user.hashedPass);
+        if(user && comparedPass){
+            req.session.user = user.toJSON();
+            res.redirect('/');
         }else{
             res.send('Error');
         }
