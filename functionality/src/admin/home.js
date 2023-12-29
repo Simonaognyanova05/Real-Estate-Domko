@@ -1,3 +1,3 @@
 module.exports = (req, res) => {
-    res.render('admin/home', { title: 'Admin Home Page' });
+    res.render('admin/home', { title: 'Недвижими имоти "Домко"' });
 }

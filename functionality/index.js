@@ -7,6 +7,8 @@ const userHome = require('./src/user/home');
 
 //admin
 const adminHome = require('./src/admin/home');
+const adminRegister = require('./src/admin/register');
+
 
 const app = express();
 
@@ -14,9 +16,10 @@ const hbs = exphbs.create({ extname: 'hbs', defaultLayout: 'main', layoutsDir: p
 app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
-
+app.use('/content', express.static('static'));
 app.get('/', userHome);
 
 app.get('/admin', adminHome);
+app.get('/admin/register', adminRegister);
 
 app.listen(3000);
