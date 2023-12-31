@@ -16,6 +16,7 @@ const adminHome = require('./src/admin/home');
 const adminRegister = require('./src/admin/register');
 const adminLogin = require('./src/admin/login');
 const adminCreateRent = require('./src/admin/createRent');
+const adminCatalog = require('./src/admin/catalog');
 
 const { registerAdmin } = require('./src/admin/requests/register');
 const { loginAdmin } = require('./src/admin/requests/login');
@@ -72,5 +73,7 @@ app.get('/admin/createRent', adminCreateRent);
 app.post('/admin/createRent', async (req, res) => {
     await createRent(req, res)
 });
+
+app.get('/admin/catalog', adminCatalog);
 
 app.listen(3000);
