@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
-const Admin = require('../models/admin');
+const Admin = require('../models/Admin');
 
 const connectionString = 'mongodb://localhost:27017/domko';
 

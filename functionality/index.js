@@ -21,6 +21,7 @@ const { registerAdmin } = require('./src/admin/requests/register');
 const { loginAdmin } = require('./src/admin/requests/login');
 const { logoutUser } = require('./src/user/logout');
 const { logoutAdmin } = require('./src/admin/logout');
+const { createRent } = require('./src/admin/requests/createRent');
 
 
 const app = express();
@@ -68,6 +69,8 @@ app.get('/admin/logout', (req, res) => {
 })
 
 app.get('/admin/createRent', adminCreateRent);
-
+app.post('/admin/createRent', async (req, res) => {
+    await createRent(req, res)
+});
 
 app.listen(3000);
