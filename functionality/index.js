@@ -7,6 +7,7 @@ const path = require('path');
 const userHome = require('./src/user/home');
 const userRegister = require('./src/user/register');
 const userLogin = require('./src/user/login');
+const userCatalog = require('./src/admin/catalog');
 const { registerUser } = require('./src/user/requests/register');
 const { loginUser } = require('./src/user/requests/login');
 
@@ -51,7 +52,8 @@ app.post('/user/login', async (req, res) => {
 });
 app.get('/user/logout', (req, res) => {
     logoutUser(req, res);
-})
+});
+app.get('/user/catalog', userCatalog);
 
 
 app.get('/admin', adminHome);
