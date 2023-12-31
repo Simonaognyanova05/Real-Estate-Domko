@@ -15,6 +15,7 @@ const { loginUser } = require('./src/user/requests/login');
 const adminHome = require('./src/admin/home');
 const adminRegister = require('./src/admin/register');
 const adminLogin = require('./src/admin/login');
+const adminCreateRent = require('./src/admin/createRent');
 
 const { registerAdmin } = require('./src/admin/requests/register');
 const { loginAdmin } = require('./src/admin/requests/login');
@@ -66,6 +67,7 @@ app.get('/admin/logout', (req, res) => {
     logoutAdmin(req, res);
 })
 
+app.get('/admin/createRent', adminCreateRent);
 
 
 app.listen(3000);
