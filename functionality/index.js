@@ -7,7 +7,7 @@ const userHome = require('./src/user/home');
 const userAbout = require('./src/user/about');
 const userRent = require('./src/user/rent');
 const userSales = require('./src/user/sales');
-
+const userGallery = require('./src/user/gallery');
 
 const app = express();
 const hbs = exphbs.create({ extname: 'hbs', defaultLayout: 'main', layoutsDir: path.join(__dirname, 'views/layouts/') });
@@ -28,6 +28,7 @@ app.get('/', userHome);
 app.get('/about', userAbout);
 app.get('/rent', userRent);
 app.get('/sales', userSales);
+app.get('/gallery', userGallery);
 
 
 app.listen(3000);
