@@ -13,6 +13,7 @@ const userContacts = require('./src/user/contacts');
 
 //admin
 const adminHome = require('./src/admin/home');
+const adminAbout = require('./src/admin/about');
 
 const app = express();
 const hbs = exphbs.create({ extname: 'hbs', defaultLayout: 'main', layoutsDir: path.join(__dirname, 'views/layouts/') });
@@ -39,5 +40,6 @@ app.get('/contacts', userContacts);
 
 //admin
 app.get('/admin', adminHome);
+app.get('/admin/about', adminAbout);
 
 app.listen(3000);
