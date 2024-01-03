@@ -16,6 +16,8 @@ const adminHome = require('./src/admin/home');
 const adminAbout = require('./src/admin/about');
 const adminRent = require('./src/admin/rent');
 const adminSales = require('./src/admin/sales');
+const adminGallery = require('./src/admin/gallery');
+const adminContacts = require('./src/admin/contacts');
 
 const app = express();
 const hbs = exphbs.create({ extname: 'hbs', defaultLayout: 'main', layoutsDir: path.join(__dirname, 'views/layouts/') });
@@ -45,5 +47,7 @@ app.get('/admin', adminHome);
 app.get('/admin/about', adminAbout);
 app.get('/admin/rent', adminRent);
 app.get('/admin/sales', adminSales);
+app.get('/admin/gallery', adminGallery);
+app.get('/admin/contacts', adminContacts);
 
 app.listen(3000);
