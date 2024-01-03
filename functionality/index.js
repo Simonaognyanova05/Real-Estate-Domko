@@ -6,6 +6,7 @@ const path = require('path');
 const userHome = require('./src/user/home');
 const userAbout = require('./src/user/about');
 const userRent = require('./src/user/rent');
+const userSales = require('./src/user/sales');
 
 
 const app = express();
@@ -26,6 +27,7 @@ app.use('/content', express.static('static'));
 app.get('/', userHome);
 app.get('/about', userAbout);
 app.get('/rent', userRent);
+app.get('/sales', userSales);
 
 
 app.listen(3000);
