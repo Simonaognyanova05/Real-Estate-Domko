@@ -3,7 +3,9 @@ const expressSession = require('express-session');
 const exphbs = require('express-handlebars');
 const path = require('path');
 
-const homeController = require('./src/user/home');
+const userHome = require('./src/user/home');
+const userAbout = require('./src/user/about');
+
 
 const app = express();
 const hbs = exphbs.create({ extname: 'hbs', defaultLayout: 'main', layoutsDir: path.join(__dirname, 'views/layouts/') });
@@ -20,6 +22,8 @@ app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 app.use('/content', express.static('static'));
 
-app.get('/', homeController);
+app.get('/', userHome);
+app.get('/about', userAbout);
+
 
 app.listen(3000);
