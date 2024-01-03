@@ -14,6 +14,7 @@ const userContacts = require('./src/user/contacts');
 //admin
 const adminHome = require('./src/admin/home');
 const adminAbout = require('./src/admin/about');
+const adminRent = require('./src/admin/rent');
 
 const app = express();
 const hbs = exphbs.create({ extname: 'hbs', defaultLayout: 'main', layoutsDir: path.join(__dirname, 'views/layouts/') });
@@ -41,5 +42,6 @@ app.get('/contacts', userContacts);
 //admin
 app.get('/admin', adminHome);
 app.get('/admin/about', adminAbout);
+app.get('/admin/rent', adminRent);
 
 app.listen(3000);
