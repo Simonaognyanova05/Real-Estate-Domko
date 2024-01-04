@@ -10,6 +10,7 @@ const userRent = require('./src/user/rent');
 const userSales = require('./src/user/sales');
 const userGallery = require('./src/user/gallery');
 const userContacts = require('./src/user/contacts');
+const userBag = require('./src/user/bag');
 
 //admin
 const adminHome = require('./src/admin/home');
@@ -41,6 +42,8 @@ app.get('/rent', userRent);
 app.get('/sales', userSales);
 app.get('/gallery', userGallery);
 app.get('/contacts', userContacts);
+app.get('/bag', userBag);
+
 
 //admin
 app.get('/admin', adminHome);
