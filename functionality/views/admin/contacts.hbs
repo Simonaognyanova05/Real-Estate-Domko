@@ -1,1 +1,26 @@
-<h1 class="page-title">Контакти - Администратор</h1>
+<h1 class="page-title">Контакти</h1>
+
+<div class="about-form">
+    <form action="/admin/contacts" method="POST">
+        <div class="mb-3">
+            <label for="title" class="form-label">Заглавие на страницата</label>
+            <input type="text" class="form-control" id="title" placeholder="Въведете заглавие на страницата"
+                name="title">
+        </div>
+        <div class="mb-3">
+            <label for="address" class="form-label">Адрес</label>
+            <input type="text" class="form-control" id="address" placeholder="УЛ. 'Тракия', No. 3" name="address">
+        </div>
+        <div class="mb-3">
+            <label for="phone" class="form-label">Телефон</label>
+            <input type="text" class="form-control" id="phone" placeholder="08XXXXXXXX" name="phone">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Имейл</label>
+            <input type="email" class="form-control" id="email" placeholder="something@abv.bg" name="email">
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Редактиране</button>
+        </div>
+    </form>
+</div>
