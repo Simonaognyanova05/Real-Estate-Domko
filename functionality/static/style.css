@@ -8,3 +8,8 @@
     padding: 30px;
     width: 1000px;
 }
+
+.card-apartament{
+    display: flex;
+    padding: 20px;
+}
