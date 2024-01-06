@@ -17,3 +17,14 @@
 #create-rent{
     padding: 20px;
 }
+
+.page-title-3{
+    padding-top: 20px;
+    text-align: center;
+    font-style: italic;
+}
+.history-paragraph{
+    width: 95%;
+    padding: 20px;
+    text-align: center;
+}
