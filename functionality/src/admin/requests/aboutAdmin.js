@@ -15,13 +15,12 @@ async function aboutAdmin(req, res) {
     const { title, history, info } = req.body;
 
     try {
-        const about = new About({
-            title, history, info
-        })
-        await about.save();
+        await About.updateOne({ title }, { $set: { title, history, info } });
         res.redirect('/about');
-    } catch (e) {
-        console.log(e);
+    } catch (err) {
+        console.log(err);
+    } finally {
+        mongoose.disconnect();
     }
 }
 
