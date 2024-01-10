@@ -26,6 +26,7 @@ const adminLogin = require('./src/admin/login');
 const { createAdmin } = require('./src/admin/requests/registerAdmin');
 const { loginAdmin } = require('./src/admin/requests/loginAdmin');
 const { aboutAdmin } = require('./src/admin/requests/aboutAdmin');
+const { contactsAdmin } = require('./src/admin/requests/contactsAdmin');
 
 
 const app = express();
@@ -65,6 +66,10 @@ app.get('/admin/rent', adminRent);
 app.get('/admin/sales', adminSales);
 app.get('/admin/gallery', adminGallery);
 app.get('/admin/contacts', adminContacts);
+app.post('/admin/contacts', async (req, res) => {
+    await contactsAdmin(req, res);
+});
+
 app.get('/admin/register', adminRegister);
 
 app.post('/admin/register', async (req, res) => {
