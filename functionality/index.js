@@ -23,9 +23,11 @@ const adminGallery = require('./src/admin/gallery');
 const adminContacts = require('./src/admin/contacts');
 const adminRegister = require('./src/admin/register');
 const adminLogin = require('./src/admin/login');
+const { createAdmin } = require('./src/admin/requests/registerAdmin');
 
 
 const app = express();
+
 const hbs = exphbs.create({ extname: 'hbs', defaultLayout: 'main', layoutsDir: path.join(__dirname, 'views/layouts/') });
 app.use(express.urlencoded({ extended: true }));
 app.use(expressSession({
@@ -60,6 +62,11 @@ app.get('/admin/sales', adminSales);
 app.get('/admin/gallery', adminGallery);
 app.get('/admin/contacts', adminContacts);
 app.get('/admin/register', adminRegister);
+
+app.post('/admin/register', async (req, res) => {
+    await createAdmin(req, res);
+});
+
 app.get('/admin/login', adminLogin);
 
 
