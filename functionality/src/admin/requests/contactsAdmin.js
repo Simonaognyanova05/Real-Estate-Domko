@@ -15,13 +15,12 @@ async function contactsAdmin(req, res) {
     const { title, address, phone, email } = req.body;
 
     try {
-        const contacts = new Contacts({
-            title, address, phone, email
-        })
-        await contacts.save();
+        await Contacts.updateOne({ title }, { $set: { title, address, phone, email } });
         res.redirect('/contacts');
-    } catch (e) {
-        console.log(e);
+    } catch (err) {
+        console.log(err);
+    } finally {
+        mongoose.disconnect();
     }
 }
 
