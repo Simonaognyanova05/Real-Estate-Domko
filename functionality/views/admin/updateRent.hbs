@@ -1,7 +1,7 @@
 <h1 class="page-title">Редактиране на имот под наем</h1>
 
 <div class="about-form">
-    <form action="/admin/createRent" method="POST" id="rent">
+    <form action="/admin/updateRent/{{rentId}}" method="POST" id="rent">
         <div class="mb-3">
             <label for="type" class="form-label">Тип имот</label>
             <input type="text" class="form-control" id="type" placeholder="Апартамент, къща, гараж и т.н." name="type">
