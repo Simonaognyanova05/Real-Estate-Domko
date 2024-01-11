@@ -71,7 +71,9 @@ app.post('/admin/about', async (req, res) => {
 app.get('/admin/rent', async (req, res) => {
     await adminRent(req, res);
 });
-app.get('/admin/sales', adminSales);
+app.get('/admin/sales', async (req, res) => {
+    await adminSales(req, res);
+});
 app.get('/admin/gallery', adminGallery);
 app.get('/admin/contacts', adminContacts);
 app.post('/admin/contacts', async (req, res) => {
