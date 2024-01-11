@@ -1,14 +1,14 @@
 <h1 class="page-title">Наеми</h1>
 
 <div class="card-apartament">
-    {{#each property}}
+    {{#each rents}}
     <div class="card" style="width: 18rem;">
-        <img src="https://archello.s3.eu-central-1.amazonaws.com/images/2020/12/17/michel-macedo-arquitetos-va-apartament-apartments-archello.1608202208.8936.jpg"
+        <img src="{{this.img1}}"
             class="card-img-top" alt="...">
         <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
+            <h5 class="card-title">{{this.type}}</h5>
+            <p class="card-text">{{this.location}}</p>
+            <p class="card-text">{{this.price}}</p>
             <a href="#" class="btn btn-primary">Редактиране</a>
             <a href="#" class="btn btn-primary">Изтриване</a>
         </div>

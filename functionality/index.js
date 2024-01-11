@@ -29,7 +29,7 @@ const { createAdmin } = require('./src/admin/requests/registerAdmin');
 const { loginAdmin } = require('./src/admin/requests/loginAdmin');
 const { aboutAdmin } = require('./src/admin/requests/aboutAdmin');
 const { contactsAdmin } = require('./src/admin/requests/contactsAdmin');
-const {createRent} = require('./src/admin/requests/createRent');
+const { createRent } = require('./src/admin/requests/createRent');
 
 
 const app = express();
@@ -65,7 +65,9 @@ app.post('/admin/about', async (req, res) => {
     await aboutAdmin(req, res);
 });
 
-app.get('/admin/rent', adminRent);
+app.get('/admin/rent', async (req, res) => {
+    await adminRent(req, res);
+});
 app.get('/admin/sales', adminSales);
 app.get('/admin/gallery', adminGallery);
 app.get('/admin/contacts', adminContacts);
@@ -87,5 +89,4 @@ app.get('/admin/createRent', admincreateRent);
 app.post('/admin/createRent', async (req, res) => {
     await createRent(req, res);
 });
-
 app.listen(3000);
