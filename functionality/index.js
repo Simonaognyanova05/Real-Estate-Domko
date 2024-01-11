@@ -38,6 +38,8 @@ const { adminDeleteSale } = require('./src/admin/adminDeleteSale');
 const { deleteSaleReq } = require('./src/admin/requests/deleteSaleReq');
 const updateRent = require('./src/admin/updateRent');
 const { updateRentReq } = require('./src/admin/requests/updateRentReq');
+const updateSale = require('./src/admin/updateSale');
+const { updateSaleReq } = require('./src/admin/requests/updateSaleReq');
 
 
 const app = express();
@@ -118,5 +120,11 @@ app.delete('/deleteSale/:saleId', async (req, res) => {
 app.get('/admin/updateRent/:rentId', updateRent);
 app.post('/admin/updateRent/:rentId', async (req, res) => {
     await updateRentReq(req, res);
-})
+});
+
+app.get('/admin/updateSale/:saleId', updateSale);
+app.post('/admin/updateSale/:saleId', async (req, res) => {
+    await updateSaleReq(req, res);
+});
+
 app.listen(3000);
