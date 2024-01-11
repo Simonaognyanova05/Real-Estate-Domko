@@ -25,7 +25,7 @@ const adminRegister = require('./src/admin/register');
 const adminLogin = require('./src/admin/login');
 const admincreateRent = require('./src/admin/createRent');
 const admincreateSale = require('./src/admin/createSale');
-
+const { adminDeleteRent } = require('./src/admin/adminDeleteRent');
 
 const { createAdmin } = require('./src/admin/requests/registerAdmin');
 const { loginAdmin } = require('./src/admin/requests/loginAdmin');
@@ -33,6 +33,7 @@ const { aboutAdmin } = require('./src/admin/requests/aboutAdmin');
 const { contactsAdmin } = require('./src/admin/requests/contactsAdmin');
 const { createRent } = require('./src/admin/requests/createRent');
 const { createSale } = require('./src/admin/requests/createSale');
+const { deleteRentReq } = require('./src/admin/requests/deleteRentReq');
 
 
 const app = express();
@@ -98,4 +99,10 @@ app.get('/admin/createSale', admincreateSale);
 app.post('/admin/createSale', async (req, res) => {
     await createSale(req, res);
 });
+app.get('/delete/:rentId', (req, res) => {
+    adminDeleteRent(req, res);
+});
+app.delete('/delete/:rentId', async (req, res) => {
+    await deleteRentReq(req, res);
+})
 app.listen(3000);
