@@ -69,7 +69,9 @@ app.get('/rent', async (req, res) => {
 });
 app.get('/sales', userSales);
 app.get('/gallery', userGallery);
-app.get('/contacts', userContacts);
+app.get('/contacts', async (req, res) => {
+    await userContacts(req, res);
+});
 app.get('/bag', userBag);
 app.get('/reserve', userReserve);
 
