@@ -1,3 +1,9 @@
-module.exports = (req, res) => {
-    res.render('user/sales', { title: "Продажби | Домко"});
+const  {getUserSales} = require('./requests/getUserSales');
+
+module.exports = async (req, res) => {
+    const sales = await getUserSales();
+    res.render('user/sales', { 
+        title: "Продажби | Домко",
+        sales: sales,
+    });
 }
