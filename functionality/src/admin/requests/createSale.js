@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Sale = require('./models/Sales');
+const Sale = require('../../models/Sales');
 
 const dbUrl = 'mongodb+srv://domko:fSSNqd7zySE0aZdW@cluster0.soh1wrl.mongodb.net/';
 

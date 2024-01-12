@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Rent = require('./models/Rent');
+const Rent = require('../../models/Rent');
 
 const dbUrl = 'mongodb+srv://domko:fSSNqd7zySE0aZdW@cluster0.soh1wrl.mongodb.net/';
 

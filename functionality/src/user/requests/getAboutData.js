@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Sales = require('../../models/Sales');
+const About = require('../../models/About');
 
 const dbUrl = 'mongodb+srv://domko:fSSNqd7zySE0aZdW@cluster0.soh1wrl.mongodb.net/';
 
@@ -9,15 +9,15 @@ const connectionParams = {
 }
 
 
-async function getSales() {
+async function getAboutData() {
     await mongoose.connect(dbUrl, connectionParams);
 
     try {
-        const sales = (await Sales.find({})).map(x => x.toJSON());
-        return sales;
+        const about = (await About.find({})).map(x => x.toJSON());
+        return about;
     } catch (e) {
         console.log(e);
     }
 }
 
-module.exports = { getSales };
+module.exports = { getAboutData };

@@ -60,7 +60,10 @@ app.use('/content', express.static('static'));
 
 //user
 app.get('/', userHome);
-app.get('/about', userAbout);
+app.get('/about', async (req, res) => {
+    await userAbout(req,res);
+});
+
 app.get('/rent', userRent);
 app.get('/sales', userSales);
 app.get('/gallery', userGallery);
