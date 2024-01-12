@@ -68,7 +68,8 @@ app.get('/rent', async (req, res) => {
     await userRent(req, res);
 });
 app.get('/sales', userSales);
-app.get('/gallery', userGallery);
+app.get('/rent/gallery', userGallery);
+
 app.get('/contacts', async (req, res) => {
     await userContacts(req, res);
 });
