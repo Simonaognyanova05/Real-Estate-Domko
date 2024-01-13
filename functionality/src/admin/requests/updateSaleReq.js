@@ -16,7 +16,7 @@ async function updateSaleReq(req, res) {
 
     try {
         await Sale.updateOne({ _id: req.params.saleId }, { $set: { type, location, address, floors, rooms, squareMeters, price, priceForHour, img1, img2, img3, img4, img5  } });
-        res.redirect('/admin/sales');
+        res.redirect('/admin/sales');      
     } catch (err) {
         console.log(err);
     } finally {
