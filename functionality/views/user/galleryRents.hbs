@@ -14,7 +14,7 @@
 <img src="{{rentData.img4}}" alt="img4">
 <img src="{{rentData.img5}}" alt="img5">
 
-<section>
+<section id="cartAdding">
 <form action="/addToCart" method="POST">
     <input type="hidden" value="{{rentData.type}}" name="type">
     <input type="hidden" value="{{rentData.location}}" name="location">
@@ -32,5 +32,4 @@
     
     <button type="submit" class="btn btn-primary">Добави в количката</button>
 </form>
-
 </section>
