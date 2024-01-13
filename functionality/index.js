@@ -42,6 +42,7 @@ const updateRent = require('./src/admin/updateRent');
 const { updateRentReq } = require('./src/admin/requests/updateRentReq');
 const updateSale = require('./src/admin/updateSale');
 const { updateSaleReq } = require('./src/admin/requests/updateSaleReq');
+const { addToCart } = require('./src/user/requests/addToCart');
 
 
 const app = express();
@@ -72,7 +73,9 @@ app.get('/rent', async (req, res) => {
 app.get('/sales', userSales);
 app.get('/rent/gallery/:rentId', userGalleryRents);
 app.get('/sales/gallery/:saleId', userGallerySales);
-
+app.post('/addToCart', async(req, res) => {
+    await addToCart(req, res);
+})
 
 app.get('/contacts', async (req, res) => {
     await userContacts(req, res);
