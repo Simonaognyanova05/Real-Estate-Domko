@@ -1,21 +1,23 @@
 <h1 class="page-title">Количка</h1>
 
+{{#each cartData}}
 <div class="card mb-3" style="max-width: 540px;">
     <div class="row g-0">
         <div class="col-md-4">
-            <img src="https://img-v2.gtsstatic.net/reno/imagereader.aspx?imageurl=https%3A%2F%2Fsir.azureedge.net%2F1103i215%2F89a6rygn3qm74ey2rhda170gc5i215&option=N&h=472&permitphotoenlargement=false"
-                class="img-fluid rounded-start" alt="...">
+            <img src="{{this.img1}}"
+                class="img-fluid rounded-start" alt="Image">
         </div>
         <div class="col-md-8">
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                    content. This content is a little bit longer.</p>
+                <h5 class="card-title">{{this.type}}</h5>
+                <p class="card-text">{{this.priceForHour}}</p>
                 <a href="#" class="btn btn-primary" style="background-color: #FC5C5C; border-color:beige">Премахни</a>
-
             </div>
         </div>
     </div>
 </div>
+{{else}}
+<p>Количката е празна</p>
+{{/each}}
 
 <a href="/reserve" class="btn btn-primary">Запази час за оглед</a>
