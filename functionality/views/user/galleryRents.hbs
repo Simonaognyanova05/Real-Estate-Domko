@@ -15,6 +15,22 @@
 <img src="{{rentData.img5}}" alt="img5">
 
 <section>
+<form action="/addToCart" method="POST">
+    <input type="hidden" name="type" value="{{rentData.type}}">
+    <input type="hidden" name="type" value="{{rentData.location}}">
+    <input type="hidden" name="type" value="{{rentData.address}}">
+    <input type="hidden" name="type" value="{{rentData.floors}}">
+    <input type="hidden" name="type" value="{{rentData.rooms}}">
+    <input type="hidden" name="type" value="{{rentData.squareMeters}}">
+    <input type="hidden" name="type" value="{{rentData.price}}">
+    <input type="hidden" name="type" value="{{rentData.priceForHour}}">
+    <input type="hidden" name="type" value="{{rentData.img1}}">
+    <input type="hidden" name="type" value="{{rentData.img2}}">
+    <input type="hidden" name="type" value="{{rentData.img3}}">
+    <input type="hidden" name="type" value="{{rentData.img4}}">
+    <input type="hidden" name="type" value="{{rentData.img5}}">
+    
+    <button type="submit" class="btn btn-primary">Добави в количката</button>
+</form>
 
-<a href="#" class="btn btn-primary">Добавете в количката</a>
 </section>

@@ -1,33 +1,13 @@
-{{#each aboutData}}
-<h1 class="page-title">{{this.title}}</h1>
+<h1 class="page-title">{{aboutData.title}}</h1>
 
 <section class="history">
     <h4 class="page-title-3">История на фирмата</h4>
 
-    <p class="history-paragraph">{{this.history}}</p>
+    <p class="history-paragraph">{{aboutData.history}}</p>
 </section>
 
 <section class="info-today">
     <h4 class="page-title-3">Фирмата днес</h4>
 
-    <p class="history-paragraph">{{this.info}}</p>
+    <p class="history-paragraph">{{aboutData.info}}</p>
 </section>
-{{else}}
-<h1 class="page-title">За нас</h1>
-
-<section class="history">
-    <h4 class="page-title-3">История на фирмата</h4>
-
-    <p class="history-paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus, qui rerum quas accusantium neque nam odio et
-        enim, quidem quia vitae ducimus ipsam perferendis facilis officia aperiam vero quo tenetur magnam at. Atque,
-        nobis hic. Nam dolorem aperiam tempora fugiat?</p>
-</section>
-
-<section class="info-today">
-    <h4 class="page-title-3">Фирмата днес</h4>
-
-    <p class="history-paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus, qui rerum quas accusantium neque nam odio et
-        enim, quidem quia vitae ducimus ipsam perferendis facilis officia aperiam vero quo tenetur magnam at. Atque,
-        nobis hic. Nam dolorem aperiam tempora fugiat?</p>
-</section>
-{{/each}}

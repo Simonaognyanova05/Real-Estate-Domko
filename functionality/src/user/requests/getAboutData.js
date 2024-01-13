@@ -8,12 +8,11 @@ const connectionParams = {
     useNewUrlParser: true
 }
 
-
 async function getAboutData() {
     await mongoose.connect(dbUrl, connectionParams);
 
     try {
-        const about = (await About.find({})).map(x => x.toJSON());
+        const about = (await About.findOne({})).toJSON();
         return about;
     } catch (e) {
         console.log(e);

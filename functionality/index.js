@@ -80,6 +80,11 @@ app.get('/contacts', async (req, res) => {
 app.get('/bag', userBag);
 app.get('/reserve', userReserve);
 
+
+
+
+
+
 //admin
 app.get('/admin', adminHome);
 app.get('/admin/about', adminAbout);
