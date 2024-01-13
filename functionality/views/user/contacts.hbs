@@ -1,7 +1,4 @@
-
-
-{{#each contactsData}}
-<h1 class="page-title">{{this.title}}</h1>
+<h1 class="page-title">{{contactsData.title}}</h1>
 <section class="contact-info">
     <div class="accordion" id="accordionExample">
         <div class="accordion-item">
@@ -13,7 +10,7 @@
             </h2>
             <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                    <strong>{{this.address}}</strong>
+                    <strong>{{contactsData.address}}</strong>
                 </div>
             </div>
         </div>
@@ -26,7 +23,7 @@
             </h2>
             <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                    <strong>{{this.phone}}</strong>
+                    <strong>{{contactsData.phone}}</strong>
                 </div>
             </div>
         </div>
@@ -39,54 +36,9 @@
             </h2>
             <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                    <strong>{{this.email}}</strong>
+                    <strong>{{contactsData.email}}</strong>
                 </div>
             </div>
         </div>
     </div>
 </section>
-{{else}}
-<section class="contact-info">
-    <div class="accordion" id="accordionExample">
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                    aria-expanded="true" aria-controls="collapseOne">
-                    Адрес
-                </button>
-            </h2>
-            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                    <strong>гр. Гоце Делчев, общ. Гоце Делчев, ул. "Дунав"</strong>
-                </div>
-            </div>
-        </div>
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Телефон
-                </button>
-            </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                    <strong>0893245894</strong>
-                </div>
-            </div>
-        </div>
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Имейл
-                </button>
-            </h2>
-            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                    <strong>domko@abv.bg</strong>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-{{/each}}

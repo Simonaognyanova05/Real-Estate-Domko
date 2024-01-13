@@ -8,12 +8,11 @@ const connectionParams = {
     useNewUrlParser: true
 }
 
-
 async function getContactsData() {
     await mongoose.connect(dbUrl, connectionParams);
 
     try {
-        const contacts = (await Contacts.find({})).map(x => x.toJSON());
+        const contacts = (await Contacts.findOne()).toJSON();
         return contacts;
     } catch (e) {
         console.log(e);
