@@ -8,7 +8,9 @@ const userHome = require('./src/user/home');
 const userAbout = require('./src/user/about');
 const userRent = require('./src/user/rent');
 const userSales = require('./src/user/sales');
-const userGallery = require('./src/user/gallery');
+const userGalleryRents = require('./src/user/galleryRents');
+const userGallerySales = require('./src/user/gallerySale');
+
 const userContacts = require('./src/user/contacts');
 const userBag = require('./src/user/bag');
 const userReserve = require('./src/user/reserve');
@@ -68,7 +70,9 @@ app.get('/rent', async (req, res) => {
     await userRent(req, res);
 });
 app.get('/sales', userSales);
-app.get('/rent/gallery/:rentId', userGallery);
+app.get('/rent/gallery/:rentId', userGalleryRents);
+app.get('/sales/gallery/:saleId', userGallerySales);
+
 
 app.get('/contacts', async (req, res) => {
     await userContacts(req, res);
