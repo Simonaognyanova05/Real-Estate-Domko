@@ -29,14 +29,25 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/">Начало</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about">За нас</a>
-                    </li>
+
+                    {{#if user}}
                     <li class="nav-item">
                         <a class="nav-link" href="/rent">Наеми</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/sales">Продажби</a>
+                    </li>
+                    {{else}}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Влизане</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/register">Регистрация</a>
+                    </li>
+                    {{/if}}
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">За нас</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/contacts">Контакти</a>
