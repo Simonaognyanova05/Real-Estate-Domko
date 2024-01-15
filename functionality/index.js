@@ -43,6 +43,8 @@ const { updateRentReq } = require('./src/admin/requests/updateRentReq');
 const updateSale = require('./src/admin/updateSale');
 const { updateSaleReq } = require('./src/admin/requests/updateSaleReq');
 const { addToCart } = require('./src/user/requests/addToCart');
+const { removeFromCart } = require('./src/user/requests/removeFromCart');
+const { userRemoveItem } = require('./src/user/userRemoveItem');
 
 
 const app = express();
@@ -81,6 +83,10 @@ app.get('/contacts', async (req, res) => {
     await userContacts(req, res);
 });
 app.get('/bag', userBag);
+app.get('/removeFromCart/:itemId', userRemoveItem)
+app.delete('/removeFromCart/:itemId', async (req, res) => {
+    await removeFromCart(req, res);
+})
 app.get('/reserve', userReserve);
 
 
