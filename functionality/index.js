@@ -1,3 +1,4 @@
+const Handlebars = require('handlebars');
 const express = require('express');
 const expressSession = require('express-session');
 const exphbs = require('express-handlebars');
@@ -61,6 +62,7 @@ app.use(expressSession({
     saveUninitialized: true,
     cookie: { secure: 'auto' }
 }));
+Handlebars.registerHelper('eq', (a, b) => a == b);
 
 
 app.engine('hbs', hbs.engine);

@@ -8,11 +8,11 @@ const connectionParams = {
     useNewUrlParser: true
 }
 
-async function getCartData() {
+async function getCartData(req, res) {
     await mongoose.connect(dbUrl, connectionParams);
 
     try {
-        const cart = (await Cart.find({})).map(x => x.toJSON());
+        const cart = (await Cart.find({ ownerId: req.session.user._id})).map(x => x.toJSON());
         return cart;
     } catch (e) {
         console.log(e);
