@@ -17,7 +17,7 @@ async function loginUser(req, res) {
 
     try {
         const user = await User.findOne({ username });
-        const comparedPass = await bcrypt.compare(password, admin.hashedPass);
+        const comparedPass = await bcrypt.compare(password, user.hashedPass);
         if(user && comparedPass){
             req.session.user = user.toJSON();
             res.redirect('/');

@@ -48,6 +48,7 @@ const { addToCart } = require('./src/user/requests/addToCart');
 const { removeFromCart } = require('./src/user/requests/removeFromCart');
 const { userRemoveItem } = require('./src/user/userRemoveItem');
 const { registerUser } = require('./src/user/requests/registerUser');
+const { loginUser } = require('./src/user/requests/loginUser');
 
 
 const app = express();
@@ -90,7 +91,9 @@ app.post('/user/register', async(req, res)  => {
     await registerUser(req, res);
 });
 app.get('/login', userLogin);
-
+app.post('/user/login', async(req, res)  => {
+    await loginUser(req, res);
+});
 app.get('/bag', userBag);
 app.get('/removeFromCart/:itemId', userRemoveItem)
 app.delete('/removeFromCart/:itemId', async (req, res) => {
