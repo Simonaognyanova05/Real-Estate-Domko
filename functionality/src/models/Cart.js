@@ -14,6 +14,7 @@ const cartSchema = new mongoose.Schema({
     img3: {type: String, required: true},
     img4: {type: String, required: true},
     img5: {type: String, required: true},
+    ownerId: {type: String, required: true},
 });
 
 const Cart = mongoose.model('Cart', cartSchema);

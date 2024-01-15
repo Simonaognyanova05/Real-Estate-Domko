@@ -6,5 +6,6 @@ module.exports = async (req, res) => {
     res.render('user/bag', { 
         title: "Количка | Домко",
         cartData: cartData,
+        user: req.session.user
     });
 }

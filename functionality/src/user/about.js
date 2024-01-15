@@ -4,6 +4,7 @@ module.exports = async (req, res) => {
     const aboutData = await getAboutData();
     res.render('user/about', {
         title: "За нас | Домко",
-        aboutData: aboutData
+        aboutData: aboutData,
+        user: req.session.user
     });
 }

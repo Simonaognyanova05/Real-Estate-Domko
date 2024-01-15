@@ -14,7 +14,7 @@ async function addToCart(req, res) {
     try {
         const cart = new Cart({
             type: type.toString(), location: location.toString(), address: address.toString(), floors: Number(floors), rooms: Number(rooms), squareMeters: Number(squareMeters), price: Number(price), priceForHour: Number(priceForHour), img1: img1.toString(), 
-            img2: img2.toString(), img3: img3.toString(), img4: img4.toString(), img5: img5.toString()
+            img2: img2.toString(), img3: img3.toString(), img4: img4.toString(), img5: img5.toString(), ownerId: req.session.user._id
         })
         await cart.save();
         res.redirect('/');

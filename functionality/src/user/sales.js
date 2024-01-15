@@ -5,5 +5,6 @@ module.exports = async (req, res) => {
     res.render('user/sales', { 
         title: "Продажби | Домко",
         sales: sales,
+        user: req.session.user
     });
 }

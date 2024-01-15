@@ -4,6 +4,7 @@ module.exports = async (req, res) => {
     const contactsData = await getContactsData();
     res.render('user/contacts', { 
         title: "Контакти | Домко",
-        contactsData: contactsData
+        contactsData: contactsData,
+        user: req.session.user
     });
 }
