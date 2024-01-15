@@ -51,6 +51,7 @@ const { userRemoveItem } = require('./src/user/userRemoveItem');
 const { registerUser } = require('./src/user/requests/registerUser');
 const { loginUser } = require('./src/user/requests/loginUser');
 const { logout } = require('./src/user/logout');
+const { logoutAdmin } = require('./src/admin/logout');
 
 
 const app = express();
@@ -141,6 +142,9 @@ app.post('/admin/register', async (req, res) => {
 app.get('/admin/login', adminLogin);
 app.post('/admin/login', async (req, res) => {
     await loginAdmin(req, res);
+});
+app.get('/admin/logout', (req, res) => {
+    logoutAdmin(req, res);
 });
 app.get('/admin/createRent', admincreateRent);
 app.post('/admin/createRent', async (req, res) => {
