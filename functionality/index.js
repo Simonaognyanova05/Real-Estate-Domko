@@ -14,6 +14,8 @@ const userContacts = require('./src/user/contacts');
 const userBag = require('./src/user/bag');
 const userReserve = require('./src/user/reserve');
 const userRegister = require('./src/user/register');
+const userLogin = require('./src/user/login');
+
 
 
 //admin
@@ -86,7 +88,9 @@ app.get('/contacts', async (req, res) => {
 app.get('/register', userRegister);
 app.post('/user/register', async(req, res)  => {
     await registerUser(req, res);
-})
+});
+app.get('/login', userLogin);
+
 app.get('/bag', userBag);
 app.get('/removeFromCart/:itemId', userRemoveItem)
 app.delete('/removeFromCart/:itemId', async (req, res) => {
