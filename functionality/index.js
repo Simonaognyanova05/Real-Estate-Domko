@@ -10,10 +10,10 @@ const userRent = require('./src/user/rent');
 const userSales = require('./src/user/sales');
 const userGalleryRents = require('./src/user/galleryRents');
 const userGallerySales = require('./src/user/gallerySale');
-
 const userContacts = require('./src/user/contacts');
 const userBag = require('./src/user/bag');
 const userReserve = require('./src/user/reserve');
+const userRegister = require('./src/user/register');
 
 
 //admin
@@ -27,8 +27,10 @@ const adminRegister = require('./src/admin/register');
 const adminLogin = require('./src/admin/login');
 const admincreateRent = require('./src/admin/createRent');
 const admincreateSale = require('./src/admin/createSale');
-const { adminDeleteRent } = require('./src/admin/adminDeleteRent');
+const updateRent = require('./src/admin/updateRent');
+const updateSale = require('./src/admin/updateSale');
 
+const { adminDeleteRent } = require('./src/admin/adminDeleteRent');
 const { createAdmin } = require('./src/admin/requests/registerAdmin');
 const { loginAdmin } = require('./src/admin/requests/loginAdmin');
 const { aboutAdmin } = require('./src/admin/requests/aboutAdmin');
@@ -38,9 +40,7 @@ const { createSale } = require('./src/admin/requests/createSale');
 const { deleteRentReq } = require('./src/admin/requests/deleteRentReq');
 const { adminDeleteSale } = require('./src/admin/adminDeleteSale');
 const { deleteSaleReq } = require('./src/admin/requests/deleteSaleReq');
-const updateRent = require('./src/admin/updateRent');
 const { updateRentReq } = require('./src/admin/requests/updateRentReq');
-const updateSale = require('./src/admin/updateSale');
 const { updateSaleReq } = require('./src/admin/requests/updateSaleReq');
 const { addToCart } = require('./src/user/requests/addToCart');
 const { removeFromCart } = require('./src/user/requests/removeFromCart');
@@ -82,11 +82,13 @@ app.post('/addToCart', async(req, res) => {
 app.get('/contacts', async (req, res) => {
     await userContacts(req, res);
 });
+app.get('/register', userRegister)
 app.get('/bag', userBag);
 app.get('/removeFromCart/:itemId', userRemoveItem)
 app.delete('/removeFromCart/:itemId', async (req, res) => {
     await removeFromCart(req, res);
-})
+});
+
 app.get('/reserve', userReserve);
 
 
