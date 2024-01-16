@@ -25,10 +25,11 @@ async function loginAdmin(req, res) {
                 req.session.admin = admin.toJSON();
                 res.redirect('/admin');
             } else {
-                res.send('Невалидни данни!');
+                res.send('Невалидни данни!')
             }
         } else {
-            res.send('Невалидни данни!');
+            res.send('Невалидни данни!')
+
         }
     } catch (e) {
         console.log(e);
