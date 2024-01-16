@@ -17,11 +17,17 @@ async function loginUser(req, res) {
 
     try {
         const user = await User.findOne({ username });
-        const comparedPass = await bcrypt.compare(password, user.hashedPass);
-        if(user && comparedPass){
-            req.session.user = user.toJSON();
-            res.redirect('/');
-        }else{
+
+        if(user){
+            const comparedPass = await bcrypt.compare(password, user.hashedPass);
+
+            if(comparedPass){
+                req.session.user = user.toJSON();
+                res.redirect('/');
+            } else {
+                res.send('Невалидни данни!');
+            }
+        } else {
             res.send('Невалидни данни!');
         }
     } catch (e) {
