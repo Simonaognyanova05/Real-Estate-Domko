@@ -17,11 +17,17 @@ async function loginAdmin(req, res) {
 
     try {
         const admin = await Admin.findOne({ username });
-        const comparedPass = await bcrypt.compare(password, admin.hashedPass);
-        if(admin && comparedPass){
-            req.session.admin = admin.toJSON();
-            res.redirect('/admin');
-        }else{
+
+        if(admin){
+            const comparedPass = await bcrypt.compare(password, admin.hashedPass);
+
+            if(comparedPass){
+                req.session.admin = admin.toJSON();
+                res.redirect('/admin');
+            } else {
+                res.send('Невалидни данни!');
+            }
+        } else {
             res.send('Невалидни данни!');
         }
     } catch (e) {
