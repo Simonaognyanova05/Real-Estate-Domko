@@ -2,6 +2,9 @@
 
 <div class="reserve-form">
     <form action="/user/reserve" method="POST" id="reserve-form">
+    {{#each ids}}
+    <input type="hidden" value="{{this}}" name="propertyId">
+    {{/each}}
         <div class="mb-3">
             <label for="names" class="form-label">Име и фамилия</label>
             <input type="text" class="form-control" id="names" placeholder="Въведете името си" name="names">

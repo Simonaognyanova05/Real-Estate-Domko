@@ -52,6 +52,7 @@ const { registerUser } = require('./src/user/requests/registerUser');
 const { loginUser } = require('./src/user/requests/loginUser');
 const { logout } = require('./src/user/logout');
 const { logoutAdmin } = require('./src/admin/logout');
+const { reservation } = require('./src/user/requests/reservation');
 
 
 const app = express();
@@ -107,7 +108,9 @@ app.delete('/removeFromCart/:itemId', async (req, res) => {
     await removeFromCart(req, res);
 });
 
-app.get('/reserve', userReserve);
+app.get('/reserve', async (req, res) => await userReserve(req, res));
+app.post('/user/reserve', async (req, res) => await reservation(req, res));
+
 
 
 

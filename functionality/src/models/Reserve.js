@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const reserveSchema = new mongoose.Schema({
-    itemId: {type: String, required: true},
+    propertyId: {type: Object, required: true},
     names: {type: String, required: true},
     date: {type: String, required: true},
     time: {type: String, required: true},
