@@ -11,12 +11,12 @@ const connectionParams = {
 async function reservation(req, res) {
     await mongoose.connect(dbUrl, connectionParams);
 
-    const { propertyId, names, date, time } = req.body;
+    const { type, location, address, floors, rooms, squareMeters, price, priceForHour, img1, img2, img3, img4, img5, names, date, time } = req.body;
 
     try {
         
         const reserve = new Reserve({
-            propertyId, names, date, time
+            type, location, address, floors, rooms, squareMeters, price, priceForHour, img1, img2, img3, img4, img5, names, date, time
         })
         await reserve.save();
         await clearCart(req, res);
