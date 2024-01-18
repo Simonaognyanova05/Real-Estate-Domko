@@ -55,6 +55,8 @@ const { logout } = require('./src/user/logout');
 const { logoutAdmin } = require('./src/admin/logout');
 const { reservation } = require('./src/user/requests/reservation');
 const ownReservations = require('./src/admin/ownReservations');
+const { checkReservation } = require('./src/admin/checkReservation');
+const { checkReservationReq } = require('./src/admin/requests/checkReservationReq');
 
 
 const app = express();
@@ -182,4 +184,8 @@ app.post('/admin/updateSale/:saleId', async (req, res) => {
 });
 app.get('/admin/usersWithReservations', async (req, res) => await usersWithReservations(req, res));
 app.get('/visit/reservation/:userId', async (req, res) => await ownReservations(req, res));
+app.get('/check/reservation/:userId',  (req, res) =>  checkReservation(req, res));
+app.delete('/check/reservation/:userId',  async (req, res) => await checkReservationReq(req, res));
+
+
 app.listen(3000);
