@@ -17,6 +17,7 @@ const reserveSchema = new mongoose.Schema({
     names: {type: String, required: true},
     date: {type: String, required: true},
     time: {type: String, required: true},
+    ownerId: {type: String, required: true}
 });
 
 const Reserve = mongoose.model('Reserve', reserveSchema);

@@ -16,7 +16,7 @@ async function reservation(req, res) {
     try {
         
         const reserve = new Reserve({
-            type, location, address, floors, rooms, squareMeters, price, priceForHour, img1, img2, img3, img4, img5, names, date, time
+            type, location, address, floors, rooms, squareMeters, price, priceForHour, img1, img2, img3, img4, img5, names, date, time, ownerId: req.session.user._id
         })
         await reserve.save();
         await clearCart(req, res);
