@@ -32,6 +32,7 @@ const admincreateRent = require('./src/admin/createRent');
 const admincreateSale = require('./src/admin/createSale');
 const updateRent = require('./src/admin/updateRent');
 const updateSale = require('./src/admin/updateSale');
+const reservations = require('./src/admin/reservations');
 
 const { adminDeleteRent } = require('./src/admin/adminDeleteRent');
 const { createAdmin } = require('./src/admin/requests/registerAdmin');
@@ -178,5 +179,6 @@ app.get('/admin/updateSale/:saleId', updateSale);
 app.post('/admin/updateSale/:saleId', async (req, res) => {
     await updateSaleReq(req, res);
 });
+app.get('/admin/reservations', reservations);
 
 app.listen(3000);
