@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 const Reserve = require('../../models/Reserve');
+const { clearCart } = require('./clearCart');
+
 
 const dbUrl = 'mongodb+srv://domko:fSSNqd7zySE0aZdW@cluster0.soh1wrl.mongodb.net/';
 const connectionParams = {
@@ -17,6 +19,7 @@ async function reservation(req, res) {
             propertyId, names, date, time
         })
         await reserve.save();
+        await clearCart(req, res);
         res.redirect('/');
     } catch (e) {
         console.log(e);
