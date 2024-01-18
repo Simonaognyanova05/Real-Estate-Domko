@@ -6,6 +6,6 @@ module.exports = async (req, res) => {
         title: "Потребителски резервации | Администратор", 
         layout: 'mainAdmin', 
         admin: req.session.admin,
-        reservations: reservations,
+        reservations
     });
 }
