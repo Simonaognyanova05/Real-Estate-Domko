@@ -1,0 +1,11 @@
+<h1 class="page-title">Резервации</h1>
+
+<ul class="list-group">
+    {{#each users}}
+    <li class="list-group-item">{{this.names}} <a href="/remove/reservation"><i class="fa-solid fa-xmark mark"></i></a><a href="/remove/reservation"><i class="fa-solid fa-check mark"></i></a></li>
+    {{else}}
+    <li class="list-group-item">Няма направени резервации</li>
+
+    {{/each}}
+</ul>
+<a href="/user/owner/{{userId}}">{{this.names}}</a>
