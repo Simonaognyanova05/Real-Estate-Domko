@@ -20,8 +20,6 @@
         {{this.type}}
       </div>
       {{/each}}
-
-
     </div>
   </div>
   <div class="accordion-item">
@@ -53,7 +51,17 @@
       <div class="accordion-body">{{this.date}}, {{this.time}}</div>
     </div>
   </div>
-
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+        data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+        Обща цена за огледи
+      </button>
+    </h2>
+    <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">{{this.totalPrice}} лв.</div>
+    </div>
+  </div>
 </div>
 {{else}}
 <p>Няма създадени имоти под наем</p>
