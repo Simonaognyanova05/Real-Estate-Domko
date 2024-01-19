@@ -9,9 +9,9 @@ function checkReservation(req, res) {
                 xhr.onload = function () {
                     if (xhr.status === 200) {
                         // Презареждане на страницата (връщане към началната страница)
-                        window.location.href = '/admin';
+                        window.location.href = '/admin/usersWithReservations';
                     } else {
-                        window.location.href = '/admin';
+                        window.location.href = '/admin/usersWithReservations';
 
                     }
                 };

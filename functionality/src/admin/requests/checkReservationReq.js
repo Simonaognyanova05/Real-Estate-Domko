@@ -15,8 +15,8 @@ async function checkReservationReq(req, res) {
     const userId = req.params.userId;
 
     try {
-        await Reserve.findOneAndDelete({ownerId: userId});
-        res.redirect('/admin/reserve');
+        await Reserve.findOneAndDelete({ _id: userId });
+        res.redirect('/admin/usersWithReservations');
     } catch (err) {
         console.log(err);
     } finally {
