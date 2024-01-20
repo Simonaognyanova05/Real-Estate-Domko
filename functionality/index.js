@@ -115,12 +115,6 @@ app.delete('/removeFromCart/:itemId', async (req, res) => {
 app.get('/reserve', async (req, res) => await userReserve(req, res));
 app.post('/user/reserve', async (req, res) => await reservation(req, res));
 
-
-
-
-
-
-
 //admin
 app.get('/admin', adminHome);
 app.get('/admin/about', adminAbout);

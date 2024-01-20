@@ -13,7 +13,7 @@ async function getRentData(req, res) {
     await mongoose.connect(dbUrl, connectionParams);
 
     try {
-        const rentData = (await Rent.findById(req.params.rentId)).toJSON();
+        const rentData = (await Rent.findById(req.params.rentId)).map(x => x.toJSON());
         return rentData;
     } catch (e) {
         console.log(e);

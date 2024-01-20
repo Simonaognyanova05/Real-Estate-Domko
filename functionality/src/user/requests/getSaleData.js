@@ -13,7 +13,7 @@ async function getSaleData(req, res) {
     await mongoose.connect(dbUrl, connectionParams);
 
     try {
-        const saleData = (await Sale.findById(req.params.saleId)).toJSON();
+        const saleData = (await Sale.findById(req.params.saleId)).map(x => x.toJSON());
         return saleData;
     } catch (e) {
         console.log(e);
