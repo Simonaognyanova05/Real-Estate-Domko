@@ -63,7 +63,7 @@ const app = express();
 
 const hbs = exphbs.create({ extname: 'hbs', defaultLayout: 'main', layoutsDir: path.join(__dirname, 'views/layouts/') });
 app.use(express.urlencoded({ extended: true }));
-app.use(expressSession({
+app.use(expressSession({    
     secret: 'secret cat',
     resave: false,
     saveUninitialized: true,
