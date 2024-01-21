@@ -1,29 +1,19 @@
 <h1 class="page-title">Наеми</h1>
 
-<!-- Добавете формата за филтриране горе на страницата -->
-<form id="filterForm">
-    <label>Тип:
-        <select name="type">
-            <option value="">Всички</option>
-            <option value="апартамент">Апартамент</option>
-            <option value="къща">Къща</option>
-            <!-- Добавете други опции, ако е необходимо -->
-        </select>
-    </label>
-
-    <label>Местоположение:
-        <select name="location">
-            <option value="">Всички</option>
-            <option value="София">София</option>
-            <option value="Пловдив">Пловдив</option>
-            <!-- Добавете други опции, ако е необходимо -->
-        </select>
-    </label>
-
-    <!-- Добавете други полета на формата, ако е необходимо -->
-
-    <button type="button" id="applyFilters" class="btn btn-primary">Филтрирай</button>
-</form>
+<form action="/rent/filter" method="POST" id="filtered">
+        <div class="mb-3">
+            <label for="type" class="form-label">Тип</label>
+            <input type="text" class="form-control" id="type" placeholder="Въведете потребителско име"
+                name="type">
+        </div>
+        <div class="mb-3">
+            <label for="location" class="form-label">Местоположение</label>
+            <input type="text" class="form-control" id="location" placeholder="Въведете парола" name="location">
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Влизане</button>
+        </div>
+    </form>
 
 <div class="card-apartament">
     {{#each rents}}
@@ -42,26 +32,3 @@
     <p>Няма създадени имоти</p>
     {{/each}}
 </div>
-
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script>
-    $(document).ready(function() {
-        $("#applyFilters").on("click", function() {
-            var formData = $("#filterForm").serialize();
-
-            // Изпращане на GET заявка с параметри за филтриране
-            $.ajax({
-                url: "/filterRents",
-                method: "GET",
-                data: formData,
-                success: function(response) {
-                    // Обновете съдържанието на .card-apartament с новите данни
-                    $(".card-apartament").html(response);
-                },
-                error: function(error) {
-                    console.error("Грешка при изпращане на GET заявка:", error);
-                }
-            });
-        });
-    });
-</script>

@@ -57,6 +57,8 @@ const { reservation } = require('./src/user/requests/reservation');
 const ownReservations = require('./src/admin/ownReservations');
 const { checkReservation } = require('./src/admin/checkReservation');
 const { checkReservationReq } = require('./src/admin/requests/checkReservationReq');
+const { getFilteredRents } = require('./src/user/requests/filteredRents');
+const filteredRents = require('./src/user/filteredRents');
 
 
 const app = express();
@@ -85,6 +87,7 @@ app.get('/about', async (req, res) => {
 app.get('/rent', async (req, res) => {
     await userRent(req, res);
 });
+app.post('/rent/filter', async(req, res) => await getUserRents(req, res));
 app.get('/sales', userSales);
 app.get('/rent/gallery/:rentId', userGalleryRents);
 app.get('/sales/gallery/:saleId', userGallerySales);
@@ -114,6 +117,9 @@ app.delete('/removeFromCart/:itemId', async (req, res) => {
 
 app.get('/reserve', async (req, res) => await userReserve(req, res));
 app.post('/user/reserve', async (req, res) => await reservation(req, res));
+app.post('/rent/filter', async (req, res) => await getFilteredRents(req, res));
+app.get('/filteredRents', async (req, res) => await filteredRents(req, res));
+
 
 //admin
 app.get('/admin', adminHome);
