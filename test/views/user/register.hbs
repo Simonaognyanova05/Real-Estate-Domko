@@ -1,0 +1,25 @@
+<h1 class="page-title">Регистрация</h1>
+
+<div class="about-form">
+    <form action="/user/register" method="POST" id="register">
+        <div class="mb-3">
+            <label for="username" class="form-label">Потребителско име</label>
+            <input type="text" class="form-control" id="username" placeholder="Въведете потребителско име" name="username">
+        </div>
+         <div class="mb-3">
+            <label for="email" class="form-label">Имейл</label>
+            <input type="email" class="form-control" id="email" placeholder="Въведете имейл" name="email">
+        </div>
+         <div class="mb-3">
+            <label for="password" class="form-label">Парола</label>
+            <input type="password" class="form-control" id="password" placeholder="Въведете парола" name="password">
+        </div>
+          <div class="mb-3">
+            <label for="rePass" class="form-label">Повторете паролата</label>
+            <input type="password" class="form-control" id="rePass" placeholder="Повторете паролата" name="rePass">
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Регистрация</button>
+        </div>
+    </form>
+</div>

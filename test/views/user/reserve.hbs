@@ -1,0 +1,37 @@
+<h1 class="page-title">Приключване на резервацията</h1>
+
+<div class="reserve-form">
+    <form action="/user/reserve" method="POST" id="reserve-form">
+    {{#each data}}
+    <input type="hidden" value="{{this.type}}" name="type">
+    <input type="hidden" value="{{this.location}}" name="location">
+    <input type="hidden" value="{{this.address}}" name="address">
+    <input type="hidden" value="{{this.floors}}" name="floors">
+    <input type="hidden" value="{{this.rooms}}" name="rooms">
+    <input type="hidden" value="{{this.squareMeters}}" name="squareMeters">
+    <input type="hidden" value="{{this.price}}" name="price">
+    <input type="hidden" value="{{this.priceForHour}}" name="priceForHour">
+    <input type="hidden" value="{{this.img1}}" name="img1">
+    <input type="hidden" value="{{this.img2}}" name="img2">
+    <input type="hidden" value="{{this.img3}}" name="img3">
+    <input type="hidden" value="{{this.img4}}" name="img4">
+    <input type="hidden" value="{{this.img5}}" name="img5">
+
+    {{/each}}
+        <div class="mb-3">
+            <label for="names" class="form-label">Име и фамилия</label>
+            <input type="text" class="form-control" id="names" placeholder="Въведете името си" name="names">
+        </div>
+        <div class="mb-3">
+            <label for="data" class="form-label">Дата за оглед</label>
+            <input type="date" class="form-control" id="date" placeholder="01.01.2024" name="date">
+        </div>
+         <div class="mb-3">
+            <label for="time" class="form-label">Час за оглед</label>
+            <input type="time" class="form-control" id="time" placeholder="10:00" name="time">
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Изпрати</button>
+        </div>
+    </form>
+</div>

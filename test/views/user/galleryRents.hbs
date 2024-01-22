@@ -1,0 +1,35 @@
+<h1 class="page-title">Галерия</h1>
+
+<p>Тип на имота: {{rentData.type}}</p>
+<p>Местоположение: {{rentData.location}}</p>
+<p>Адрес: {{rentData.address}}</p>
+<p>Брой етажи: {{rentData.floors}}</p>
+<p>Брой стаи: {{rentData.rooms}}</p>
+<p>Квадтратура: {{rentData.squareMeters}}</p>
+<p>Цена: {{rentData.price}}</p>
+<p>Цена за оглед: {{rentData.priceForHour}}</p>
+<img src="{{rentData.img1}}" alt="img1">
+<img src="{{rentData.img2}}" alt="img2">
+<img src="{{rentData.img3}}" alt="img3">
+<img src="{{rentData.img4}}" alt="img4">
+<img src="{{rentData.img5}}" alt="img5">
+
+<section id="cartAdding">
+<form action="/addToCart" method="POST">
+    <input type="hidden" value="{{rentData.type}}" name="type">
+    <input type="hidden" value="{{rentData.location}}" name="location">
+    <input type="hidden" value="{{rentData.address}}" name="address">
+    <input type="hidden" value="{{rentData.floors}}" name="floors">
+    <input type="hidden" value="{{rentData.rooms}}" name="rooms">
+    <input type="hidden" value="{{rentData.squareMeters}}" name="squareMeters">
+    <input type="hidden" value="{{rentData.price}}" name="price">
+    <input type="hidden" value="{{rentData.priceForHour}}" name="priceForHour">
+    <input type="hidden" value="{{rentData.img1}}" name="img1">
+    <input type="hidden" value="{{rentData.img2}}" name="img2">
+    <input type="hidden" value="{{rentData.img3}}" name="img3">
+    <input type="hidden" value="{{rentData.img4}}" name="img4">
+    <input type="hidden" value="{{rentData.img5}}" name="img5">
+    
+    <button type="submit" class="btn btn-primary">Добави в количката</button>
+</form>
+</section>
