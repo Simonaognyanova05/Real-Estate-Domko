@@ -65,7 +65,7 @@ const app = express();
 
 const hbs = exphbs.create({ extname: 'hbs', defaultLayout: 'main', layoutsDir: path.join(__dirname, 'views/layouts/') });
 app.use(express.urlencoded({ extended: true }));
-app.use(expressSession({    
+app.use(expressSession({
     secret: 'secret cat',
     resave: false,
     saveUninitialized: true,
@@ -81,17 +81,17 @@ app.use('/content', express.static('static'));
 //user
 app.get('/', userHome);
 app.get('/about', async (req, res) => {
-    await userAbout(req,res);
+    await userAbout(req, res);
 });
 
 app.get('/rent', async (req, res) => {
     await userRent(req, res);
 });
-app.post('/rent/filter', async(req, res) => await getUserRents(req, res));
+app.post('/rent/filter', async (req, res) => await getUserRents(req, res));
 app.get('/sales', userSales);
 app.get('/rent/gallery/:rentId', userGalleryRents);
 app.get('/sales/gallery/:saleId', userGallerySales);
-app.post('/addToCart', async(req, res) => {
+app.post('/addToCart', async (req, res) => {
     await addToCart(req, res);
 })
 
@@ -99,11 +99,11 @@ app.get('/contacts', async (req, res) => {
     await userContacts(req, res);
 });
 app.get('/register', userRegister);
-app.post('/user/register', async(req, res)  => {
+app.post('/user/register', async (req, res) => {
     await registerUser(req, res);
 });
 app.get('/login', userLogin);
-app.post('/user/login', async(req, res)  => {
+app.post('/user/login', async (req, res) => {
     await loginUser(req, res);
 });
 app.get('/logout', (req, res) => {
@@ -117,8 +117,11 @@ app.delete('/removeFromCart/:itemId', async (req, res) => {
 
 app.get('/reserve', async (req, res) => await userReserve(req, res));
 app.post('/user/reserve', async (req, res) => await reservation(req, res));
-app.get('/filterRents', filterRents);
-app.post('/user/filterRent', async (req, res) => await filterRentsReq(req, res));
+app.get('/filterRents', async (req, res) => await filterRents(req, res));
+app.post('/user/filterRent', async (req, res) => { 
+    await filterRentsReq(req, res) 
+    res.redirect('/filterRents')
+});
 
 //admin
 app.get('/admin', adminHome);
@@ -183,8 +186,8 @@ app.post('/admin/updateSale/:saleId', async (req, res) => {
 });
 app.get('/admin/usersWithReservations', async (req, res) => await usersWithReservations(req, res));
 app.get('/visit/reservation/:userId', async (req, res) => await ownReservations(req, res));
-app.get('/check/reservation/:userId',  (req, res) =>  checkReservation(req, res));
-app.delete('/check/reservation/:userId',  async (req, res) => await checkReservationReq(req, res));
+app.get('/check/reservation/:userId', (req, res) => checkReservation(req, res));
+app.delete('/check/reservation/:userId', async (req, res) => await checkReservationReq(req, res));
 
 
 app.listen(3000);
