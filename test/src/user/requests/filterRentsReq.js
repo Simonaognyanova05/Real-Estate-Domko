@@ -11,10 +11,12 @@ const connectionParams = {
 
 async function filterRentsReq(req, res) {
     await mongoose.connect(dbUrl, connectionParams);
+    const { username, password } = req.body;
 
-    const type = req.body.type;
     try {
-        const rents = (await Rent.find({ type: type, location: 'София'})).map(x => x.toJSON());
+        const rents = (await Rent.find({ type: username })).map(x => x.toJSON());
+     
+
         return rents;
     } catch (e) {
         console.log(e);

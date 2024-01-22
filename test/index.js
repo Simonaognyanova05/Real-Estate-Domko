@@ -120,7 +120,6 @@ app.post('/user/reserve', async (req, res) => await reservation(req, res));
 app.get('/filterRents', async (req, res) => await filterRents(req, res));
 app.post('/user/filterRent', async (req, res) => { 
     await filterRentsReq(req, res) 
-    res.redirect('/filterRents')
 });
 
 //admin
