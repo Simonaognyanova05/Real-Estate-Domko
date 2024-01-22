@@ -58,7 +58,8 @@ const { updateSaleReq } = require('./src/admin/requests/updateSaleReq');
 const { logoutAdmin } = require('./src/admin/logout');
 const { checkReservation } = require('./src/admin/checkReservation');
 const { checkReservationReq } = require('./src/admin/requests/checkReservationReq');
-const filterrRents = require('./src/user/filterrRents');
+const filterRents = require('./src/user/filterRents');
+const { filterRentsReq } = require('./src/user/requests/filterRentsReq');
 
 const app = express();
 
@@ -116,7 +117,8 @@ app.delete('/removeFromCart/:itemId', async (req, res) => {
 
 app.get('/reserve', async (req, res) => await userReserve(req, res));
 app.post('/user/reserve', async (req, res) => await reservation(req, res));
-app.get('/filterRents', filterrRents);
+app.get('/filterRents', filterRents);
+app.post('/user/filterRent', async (req, res) => await filterRentsReq(req, res));
 
 //admin
 app.get('/admin', adminHome);
