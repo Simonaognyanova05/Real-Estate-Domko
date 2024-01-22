@@ -1,18 +1,5 @@
 <h1 class="page-title">Наеми</h1>
 
-<form action="/user/filterRent" method="POST" id="login">
-    <div class="mb-3">
-        <label for="type" class="form-label">Тип</label>
-        <input type="text" class="form-control" id="type" placeholder="Въведете потребителско име" name="type">
-    </div>
-    <div class="mb-3">
-        <label for="location" class="form-label">Местоположение</label>
-        <input type="text" class="form-control" id="location" placeholder="Въведете парола" name="location">
-    </div>
-    <div class="col-12">
-        <button type="submit" class="btn btn-primary">Филтрирай</button>
-    </div>
-</form>
 <div class="card-apartament">
     {{#each rents}}
     <div class="card" style="width: 18rem;">
