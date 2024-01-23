@@ -11,7 +11,7 @@ async function clearCart(req, res) {
     await mongoose.connect(dbUrl, connectionParams);
 
     try {
-        await Cart.findOneAndDelete({ ownerId: req.session.user._id });
+        await Cart.deleteMany({ ownerId: req.session.user._id });
         res.redirect('/');
     } catch (e) {
         console.log(e);
