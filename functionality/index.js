@@ -16,6 +16,8 @@ const userBag = require('./src/user/bag');
 const userReserve = require('./src/user/reserve');
 const userRegister = require('./src/user/register');
 const userLogin = require('./src/user/login');
+const filterRents = require('./src/user/filterRents');
+const { filterRentsReq } = require('./src/user/requests/filterRentsReq');
 
 const { getUserRents } = require('./src/user/requests/getUserRents');
 const { addToCart } = require('./src/user/requests/addToCart');
@@ -115,7 +117,10 @@ app.delete('/removeFromCart/:itemId', async (req, res) => {
 
 app.get('/reserve', async (req, res) => await userReserve(req, res));
 app.post('/user/reserve', async (req, res) => await reservation(req, res));
-
+app.get('/filterRents', async (req, res) => await filterRents(req, res));
+app.post('/user/filterRent', async (req, res) => { 
+    await filterRentsReq(req, res) 
+});
 //admin
 app.get('/admin', adminHome);
 app.get('/admin/about', adminAbout);

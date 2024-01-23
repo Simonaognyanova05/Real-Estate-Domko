@@ -1,5 +1,35 @@
 <h1 class="page-title">Наеми</h1>
 
+<div class="about-form">
+    <form action="/user/filterRent" method="POST" id="login">
+        <div class="mb-3">
+            <input type="radio" id="type" value="Апартамент" name="type">
+            <label for="type">Апартамент</label>
+
+            <input type="radio" id="type" value="Къща" name="type">
+            <label for="type">Къща</label>
+
+             <input type="radio" id="type" value="Гараж" name="type">
+            <label for="type">Гараж</label>
+
+            <input type="radio" id="type" value="Офис" name="type">
+            <label for="type">Офис</label>
+
+               <input type="radio" id="type" value="Друго" name="type">
+            <label for="type">Друго</label>
+        </div>
+        <div class="mb-3">
+            <label for="location" class="form-label">Местоположение</label>
+            <input type="text" class="form-control" id="location" placeholder="Въведете местоположение на имота"
+                name="location">
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Влизане</button>
+        </div>
+    </form>
+</div>
+
+
 <div class="card-apartament">
     {{#each rents}}
     <div class="card" style="width: 18rem;">
