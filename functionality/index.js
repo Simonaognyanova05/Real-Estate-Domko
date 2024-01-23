@@ -60,6 +60,7 @@ const { updateSaleReq } = require('./src/admin/requests/updateSaleReq');
 const { logoutAdmin } = require('./src/admin/logout');
 const { checkReservation } = require('./src/admin/checkReservation');
 const { checkReservationReq } = require('./src/admin/requests/checkReservationReq');
+const { filterSalesReq } = require('./src/user/requests/filterSalesReq');
 
 const app = express();
 
@@ -121,6 +122,12 @@ app.get('/filterRents', async (req, res) => await filterRents(req, res));
 app.post('/user/filterRent', async (req, res) => { 
     await filterRentsReq(req, res) 
 });
+app.get('/filterSales', async (req, res) => await filterRents(req, res));
+app.post('/user/filterSales', async (req, res) => { 
+    await filterSalesReq(req, res) 
+});
+
+
 //admin
 app.get('/admin', adminHome);
 app.get('/admin/about', adminAbout);
