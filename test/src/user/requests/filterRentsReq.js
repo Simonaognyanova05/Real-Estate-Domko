@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Rent = require('../../models/Rent');
+const filterRents = require('../filterRents');
 
 const dbUrl = 'mongodb+srv://domko:fSSNqd7zySE0aZdW@cluster0.soh1wrl.mongodb.net/';
 
@@ -11,13 +12,13 @@ const connectionParams = {
 
 async function filterRentsReq(req, res) {
     await mongoose.connect(dbUrl, connectionParams);
-    const { username, password } = req.body;
+    const { type, location } = req.body;
 
     try {
-        const rents = (await Rent.find({ type: username })).map(x => x.toJSON());
-     
+        const rents = (await Rent.find({ type: type, location: location })).map(x => x.toJSON());
 
-        return rents;
+        req.storage = { rents };
+        filterRents(req, res, rents);
     } catch (e) {
         console.log(e);
     }
