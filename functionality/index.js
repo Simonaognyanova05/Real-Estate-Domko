@@ -27,6 +27,7 @@ const { registerUser } = require('./src/user/requests/registerUser');
 const { loginUser } = require('./src/user/requests/loginUser');
 const { logout } = require('./src/user/logout');
 const { reservation } = require('./src/user/requests/reservation');
+const { filterSalesReq } = require('./src/user/requests/filterSalesReq');
 
 
 //admin
@@ -60,7 +61,6 @@ const { updateSaleReq } = require('./src/admin/requests/updateSaleReq');
 const { logoutAdmin } = require('./src/admin/logout');
 const { checkReservation } = require('./src/admin/checkReservation');
 const { checkReservationReq } = require('./src/admin/requests/checkReservationReq');
-const { filterSalesReq } = require('./src/user/requests/filterSalesReq');
 
 const app = express();
 
