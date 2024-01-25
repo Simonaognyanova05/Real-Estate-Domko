@@ -63,6 +63,7 @@ const { checkReservation } = require('./src/admin/checkReservation');
 const { checkReservationReq } = require('./src/admin/requests/checkReservationReq');
 const usersMessages = require('./src/admin/usersMessages');
 const { sentMessage } = require('./src/user/requests/sentMessage');
+const ownMessages = require('./src/admin/ownMessages');
 
 const app = express();
 
@@ -195,5 +196,7 @@ app.get('/admin/usersWithReservations', async (req, res) => await usersWithReser
 app.get('/visit/reservation/:userId', async (req, res) => await ownReservations(req, res));
 app.get('/check/reservation/:userId',  (req, res) =>  checkReservation(req, res));
 app.delete('/check/reservation/:userId',  async (req, res) => await checkReservationReq(req, res));
-app.get('/admin/messagesAdmin', usersMessages);
+app.get('/admin/messagesAdmin', async (req, res) => await usersMessages(req, res));
+app.get('/visit/messagesAdmin/:userId', async (req, res) => await ownMessages(req, res));
+
 app.listen(3000);
