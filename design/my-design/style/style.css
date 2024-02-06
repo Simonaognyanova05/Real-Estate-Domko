@@ -1,0 +1,91 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#background {
+    height: 100%;
+    width: 100%;
+    background-image: url('../images/background.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+#bg-img {
+    position: absolute;
+    background-color: black;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.7;
+    z-index: 0;
+}
+
+#background p {
+    position: absolute;
+    width: 60%;
+    top: 10%;
+    left: 19%;
+    color: white;
+    font-size: 60px; 
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    line-height: 100px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.buttons {
+    position: absolute;
+    top: 60%;
+    left: 37%;
+}
+
+a {
+    background-color: rgb(202, 198, 225);
+    color: rgb(38, 38, 69);
+    border: 2px solid;
+    border-radius: 20px;
+    border: none;
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+a:hover {
+    background-color: rgb(38, 38, 69);
+    color: rgb(202, 198, 225);
+}
+
+.english {
+    margin: 50px;
+}
+
+/* Медийно запитване за по-малки екрани */
+@media only screen and (max-width: 768px) {
+    #background p {
+        font-size: 30px;
+        width: 80%;
+        left: 10%;
+        top: 5%;
+    }
+
+    .buttons {
+        top: 75%;
+        left: 27%;
+    }
+
+    a {
+        padding: 8px 20px;
+        font-size: 16px;
+    }
+}
