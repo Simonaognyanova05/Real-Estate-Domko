@@ -5,6 +5,7 @@ const exphbs = require('express-handlebars');
 const path = require('path');
 
 //user
+const userWelcome = require('./src/user/welcome')
 const userHome = require('./src/user/home');
 const userAbout = require('./src/user/about');
 const userRent = require('./src/user/rent');
@@ -17,6 +18,7 @@ const userReserve = require('./src/user/reserve');
 const userRegister = require('./src/user/register');
 const userLogin = require('./src/user/login');
 const filterRents = require('./src/user/filterRents');
+
 const { filterRentsReq } = require('./src/user/requests/filterRentsReq');
 
 const { getUserRents } = require('./src/user/requests/getUserRents');
@@ -83,6 +85,7 @@ app.set('view engine', 'hbs');
 app.use('/content', express.static('static'));
 
 //user
+app.get('/welcome', userWelcome)
 app.get('/', userHome);
 app.get('/about', async (req, res) => {
     await userAbout(req,res);
