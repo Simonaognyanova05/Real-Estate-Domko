@@ -37,6 +37,15 @@
     padding: 30px;
 }
 
+.contact-subtitle{
+    text-align: center;
+}
+
+.contact-form{
+    width: 50%;
+    padding: 30px;
+}
+
 .footer{
     background-color: black;
     color: aliceblue;

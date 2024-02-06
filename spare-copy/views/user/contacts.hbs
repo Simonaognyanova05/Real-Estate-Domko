@@ -1,4 +1,5 @@
 <h1 class="page-title">{{contactsData.title}}</h1>
+
 <section class="contact-info">
     <div class="accordion" id="accordionExample">
         <div class="accordion-item">
@@ -41,4 +42,25 @@
             </div>
         </div>
     </div>
+</section>
+
+<section class="contact-form">
+    <h2 class="contact-subtitle">Пишете ни</h2>
+    <form action="/sentMessage" method="POST">
+        <div class="mb-3">
+            <label for="names" class="form-label">Име и фамилия</label>
+            <input type="text" class="form-control" id="names" name="names">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email">
+        </div>
+        <div class="mb-3">
+            <label for="message" class="form-label">Вашето съобщение</label>
+            <textarea class="form-control" id="message" name="message"></textarea>
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Изпрати</button>
+        </div>
+    </form>
 </section>

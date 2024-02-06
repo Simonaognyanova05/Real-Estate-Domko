@@ -1,21 +1,25 @@
 const mongoose = require('mongoose');
-const Cart = require('../../models/Cart');
+const Message = require('../../models/Message');
+
 
 const dbUrl = 'mongodb+srv://domko:fSSNqd7zySE0aZdW@cluster0.soh1wrl.mongodb.net/';
+
 const connectionParams = {
     useUnifiedTopology: true,
     useNewUrlParser: true
 }
 
-async function clearCart(req, res) {
+
+async function getOwnMessages(req, res) {
     await mongoose.connect(dbUrl, connectionParams);
 
+    const userId = req.params.userId;
     try {
-        await Cart.findOneAndDelete({ ownerId: req.session.user._id });
-        res.redirect('/');
+        const ownMessages = (await Message.find({ _id: userId })).map(x => x.toJSON());
+        return ownMessages;
     } catch (e) {
         console.log(e);
     }
 }
 
-module.exports = { clearCart };
+module.exports = { getOwnMessages };

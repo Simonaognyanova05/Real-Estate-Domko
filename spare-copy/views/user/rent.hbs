@@ -3,6 +3,7 @@
 <div class="about-form">
     <form action="/user/filterRent" method="POST" id="login">
         <div class="mb-3">
+            <p>Изберете желан тип имот</p>
             <input type="radio" id="type" value="Апартамент" name="type">
             <label for="type">Апартамент</label>
 
@@ -24,10 +25,11 @@
                 name="location">
         </div>
         <div class="col-12">
-            <button type="submit" class="btn btn-primary">Влизане</button>
+            <button type="submit" class="btn btn-primary">Филтрирай</button>
         </div>
     </form>
 </div>
+
 
 <div class="card-apartament">
     {{#each rents}}

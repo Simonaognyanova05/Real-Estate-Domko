@@ -1,0 +1,10 @@
+<h1 class="page-title">Потребители със съобщения</h1>
+
+<ul class="list-group">
+    {{#each users}}
+    <a href="/visit/messagesAdmin/{{this._id}}"><li class="list-group-item">{{this.names}}</a> <a href="/check/reservation/{{this._id}}"><i class="fa-solid fa-check mark"></i></a></li>
+    {{else}}
+    <li class="list-group-item">Няма съобщения</li>
+    {{/each}}
+</ul>
+<a href="/user/message/{{userId}}">{{this.names}}</a>

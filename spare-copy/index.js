@@ -16,6 +16,8 @@ const userBag = require('./src/user/bag');
 const userReserve = require('./src/user/reserve');
 const userRegister = require('./src/user/register');
 const userLogin = require('./src/user/login');
+const filterRents = require('./src/user/filterRents');
+const { filterRentsReq } = require('./src/user/requests/filterRentsReq');
 
 const { getUserRents } = require('./src/user/requests/getUserRents');
 const { addToCart } = require('./src/user/requests/addToCart');
@@ -25,6 +27,7 @@ const { registerUser } = require('./src/user/requests/registerUser');
 const { loginUser } = require('./src/user/requests/loginUser');
 const { logout } = require('./src/user/logout');
 const { reservation } = require('./src/user/requests/reservation');
+const { filterSalesReq } = require('./src/user/requests/filterSalesReq');
 
 
 //admin
@@ -58,14 +61,15 @@ const { updateSaleReq } = require('./src/admin/requests/updateSaleReq');
 const { logoutAdmin } = require('./src/admin/logout');
 const { checkReservation } = require('./src/admin/checkReservation');
 const { checkReservationReq } = require('./src/admin/requests/checkReservationReq');
-const filterRents = require('./src/user/filterRents');
-const { filterRentsReq } = require('./src/user/requests/filterRentsReq');
+const usersMessages = require('./src/admin/usersMessages');
+const { sentMessage } = require('./src/user/requests/sentMessage');
+const ownMessages = require('./src/admin/ownMessages');
 
 const app = express();
 
 const hbs = exphbs.create({ extname: 'hbs', defaultLayout: 'main', layoutsDir: path.join(__dirname, 'views/layouts/') });
 app.use(express.urlencoded({ extended: true }));
-app.use(expressSession({
+app.use(expressSession({    
     secret: 'secret cat',
     resave: false,
     saveUninitialized: true,
@@ -81,17 +85,17 @@ app.use('/content', express.static('static'));
 //user
 app.get('/', userHome);
 app.get('/about', async (req, res) => {
-    await userAbout(req, res);
+    await userAbout(req,res);
 });
 
 app.get('/rent', async (req, res) => {
     await userRent(req, res);
 });
-app.post('/rent/filter', async (req, res) => await getUserRents(req, res));
+app.post('/rent/filter', async(req, res) => await getUserRents(req, res));
 app.get('/sales', userSales);
 app.get('/rent/gallery/:rentId', userGalleryRents);
 app.get('/sales/gallery/:saleId', userGallerySales);
-app.post('/addToCart', async (req, res) => {
+app.post('/addToCart', async(req, res) => {
     await addToCart(req, res);
 })
 
@@ -99,11 +103,11 @@ app.get('/contacts', async (req, res) => {
     await userContacts(req, res);
 });
 app.get('/register', userRegister);
-app.post('/user/register', async (req, res) => {
+app.post('/user/register', async(req, res)  => {
     await registerUser(req, res);
 });
 app.get('/login', userLogin);
-app.post('/user/login', async (req, res) => {
+app.post('/user/login', async(req, res)  => {
     await loginUser(req, res);
 });
 app.get('/logout', (req, res) => {
@@ -121,6 +125,11 @@ app.get('/filterRents', async (req, res) => await filterRents(req, res));
 app.post('/user/filterRent', async (req, res) => { 
     await filterRentsReq(req, res) 
 });
+app.get('/filterSales', async (req, res) => await filterRents(req, res));
+app.post('/user/filterSales', async (req, res) => { 
+    await filterSalesReq(req, res) 
+});
+app.post('/sentMessage', async (req, res) => await sentMessage(req, res));
 
 //admin
 app.get('/admin', adminHome);
@@ -185,8 +194,9 @@ app.post('/admin/updateSale/:saleId', async (req, res) => {
 });
 app.get('/admin/usersWithReservations', async (req, res) => await usersWithReservations(req, res));
 app.get('/visit/reservation/:userId', async (req, res) => await ownReservations(req, res));
-app.get('/check/reservation/:userId', (req, res) => checkReservation(req, res));
-app.delete('/check/reservation/:userId', async (req, res) => await checkReservationReq(req, res));
-
+app.get('/check/reservation/:userId',  (req, res) =>  checkReservation(req, res));
+app.delete('/check/reservation/:userId',  async (req, res) => await checkReservationReq(req, res));
+app.get('/admin/messagesAdmin', async (req, res) => await usersMessages(req, res));
+app.get('/visit/messagesAdmin/:userId', async (req, res) => await ownMessages(req, res));
 
 app.listen(3000);

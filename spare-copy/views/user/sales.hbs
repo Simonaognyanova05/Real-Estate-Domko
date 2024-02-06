@@ -1,0 +1,49 @@
+<h1 class="page-title">Продажби</h1>
+
+<div class="about-form">
+    <form action="/user/filterSales" method="POST" id="login">
+        <div class="mb-3">
+            <p>Изберете желан тип имот</p>
+            <input type="radio" id="type" value="Апартамент" name="type">
+            <label for="type">Апартамент</label>
+
+            <input type="radio" id="type" value="Къща" name="type">
+            <label for="type">Къща</label>
+
+             <input type="radio" id="type" value="Гараж" name="type">
+            <label for="type">Гараж</label>
+
+            <input type="radio" id="type" value="Офис" name="type">
+            <label for="type">Офис</label>
+
+               <input type="radio" id="type" value="Друго" name="type">
+            <label for="type">Друго</label>
+        </div>
+        <div class="mb-3">
+            <label for="location" class="form-label">Местоположение</label>
+            <input type="text" class="form-control" id="location" placeholder="Въведете местоположение на имота"
+                name="location">
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Филтрирай</button>
+        </div>
+    </form>
+</div>
+
+<div class="card-apartament">
+    {{#each sales}}
+    <div class="card" style="width: 18rem;">
+        <img src="{{this.img1}}" class="card-img-top" alt="..." style="width: 100%; height: 180px">
+        <div class="card-body">
+            <h5 class="card-title">{{this.type}}</h5>
+            <p class="card-text">гр./с. {{this.location}}</p>
+            <p class="card-text">Цена: {{this.price}}</p>
+            <p class="card-text">Цена за оглед: {{this.priceForHour}}</p>
+
+            <a href="/sales/gallery/{{this._id}}" class="btn btn-primary">Галерия</a>
+        </div>
+    </div>
+    {{else}}
+    <p>Няма създадени имоти</p>
+    {{/each}}
+</div>
