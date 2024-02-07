@@ -15,8 +15,8 @@ async function aboutAdmin(req, res) {
     const { title, history, info } = req.body;
 
     try {
-        await About.updateOne({ title }, { $set: { title, history, info } });
-        res.redirect('/about');
+        await About.updateOne({ $set: { title, history, info } });
+        res.redirect('/admin/about');
     } catch (err) {
         console.log(err);
     } finally {

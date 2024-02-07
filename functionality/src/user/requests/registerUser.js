@@ -19,6 +19,10 @@ async function registerUser(req, res) {
         res.send('Паролите не съвпадат!');
         return;
     }
+    if (password.length < 6) {
+        res.send('Паролата трябва да е минимум 6 символа!');
+        return;
+    }
     if (username.length < 5) {
         res.send('Потребителското име трябва да е минимум 5 символа!');
         return;

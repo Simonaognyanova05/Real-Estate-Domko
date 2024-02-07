@@ -29,14 +29,19 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/">Начало</a>
                     </li>
-
-                    {{#if user}}
                     <li class="nav-item">
                         <a class="nav-link" href="/rent">Наеми</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/sales">Продажби</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">За нас</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contacts">Контакти</a>
+                    </li>
+                    {{#if user}}
                     <li class="nav-item">
                         <a class="nav-link" href="/logout">Изход</a>
                     </li>
@@ -48,19 +53,13 @@
                         <a class="nav-link" href="/register">Регистрация</a>
                     </li>
                     {{/if}}
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about">За нас</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/contacts">Контакти</a>
-                    </li>
                 </ul>
                 <ul class="navbar-nav ms-auto"> <!-- Добавяне на ms-auto за подравняване отдясно -->
+
+                    {{#if user}}
                     <li class="nav-item">
                         <a class="nav-link" href="/bag"><i class="fa-solid fa-cart-shopping"></i></a>
                     </li>
-                    {{#if user}}
                     <li class="nav-item">
                         <a class="nav-link" href="#">{{user.username}}</a>
                     </li>
