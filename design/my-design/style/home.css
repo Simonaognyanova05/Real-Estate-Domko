@@ -1,0 +1,37 @@
+body{
+    background-color: rgb(243, 243, 255);
+}
+
+nav {
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#navigation {
+    position: relative; /* Добавяме relative position на #navigation */
+    margin-left: 24%;
+}
+
+#navigation li {
+    display: inline-block;
+    margin-top: 50px;
+}
+
+#navigation li a {
+    color: rgb(37, 37, 82);
+    text-decoration: none;
+    font-size: 22px;
+    padding: 30px;
+}
+
+#navigation .cart {
+   margin-left: 250px;
+}
+#navigation .username{
+    margin: 5px;
+}
