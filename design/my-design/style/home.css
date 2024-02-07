@@ -35,3 +35,27 @@ nav {
 #navigation .username{
     margin: 5px;
 }
+
+.mobile-navigation-image {
+    display: none; /* По подразбиране изображението е скрито */
+}
+
+@media screen and (max-width: 768px) {
+    #navigation {
+        display: none; /* Скриваме навигационния бар при по-малки екрани */
+    }
+
+    .mobile-navigation-image {
+        display: block; /* Показваме изображението при по-малки екрани */
+        width: 100%; /* Задаваме ширина на изображението да пасва на екрана */
+        max-width: 100%; /* Задаваме максимална ширина на изображението */
+        text-align: right;
+        margin-top: 10px;
+        padding-right: 20px;
+        font-size: 30px;
+    }
+
+    
+
+    
+}
