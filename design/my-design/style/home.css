@@ -74,6 +74,7 @@ body {
     display: none;
 }
 
+
 @media (max-width: 992px) {
     .header {
         padding: 1.3rem 5%;
@@ -107,7 +108,7 @@ body {
     }
     
     #check:checked~.navbar{
-        height: 17.7rem;
+        height: 23.7rem;
     }
 
     .navbar a {
@@ -125,51 +126,4 @@ body {
         opacity: 1;
         transition-delay: calc(.15s * var(--i));
     }
-
-}
-
-/* body{
-    background-color: rgb(224, 224, 255);
-}
-
-nav {
-    position: relative;
-}
-
-.logo {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-#navigation {
-    position: relative; 
-    margin-left: 24%;
-}
-
-#navigation li {
-    display: inline-block;
-    margin-top: 50px;
-}
-
-#navigation li a {
-    color: rgb(37, 37, 82);
-    text-decoration: none;
-    font-size: 22px;
-    padding: 30px;
-}
-
-#navigation .cart {
-   margin-left: 250px;
-}
-#navigation .username{
-    margin: 5px;
-}
-
-.mobile-navigation-image {
-    display: none; 
-}
-
-@media screen and (max-width: 768px) {
-
-} */
+} 
