@@ -88,6 +88,14 @@
     line-height: 1.8;
     border-radius: 50%;
 }
+#info{
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 20px;
+}
+.first, .second, .thirth, .four{
+    display: inline-block;
+}
 
 @media only screen and (max-width: 767px){
     .navbar-nav{
