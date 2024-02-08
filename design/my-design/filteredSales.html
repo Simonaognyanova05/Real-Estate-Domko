@@ -11,7 +11,7 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style/style.css">
-    <title>Продажби | Домко</title>
+    <title>Филтрирани наеми | Домко</title>
 </head>
 
 <body>
@@ -20,6 +20,7 @@
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img src="./img/logo-example-new1.png" alt="logo" class="w-50">
+
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -51,38 +52,7 @@
         </div>
     </nav>
 
-    <section class="container" style="margin-top: 150px;" id="popular">
-        <form action="/user/filterRent" method="POST" id="login">
-            <div class="mb-3">
-                <p><strong>Изберете желан тип имот</strong></p>
-                <input type="radio" id="type" value="Апартамент" name="type">
-                <label for="type">Апартамент</label>
-
-                <input type="radio" id="type" value="Къща" name="type">
-                <label for="type">Къща</label>
-
-                <input type="radio" id="type" value="Гараж" name="type">
-                <label for="type">Гараж</label>
-
-                <input type="radio" id="type" value="Офис" name="type">
-                <label for="type">Офис</label>
-
-                <input type="radio" id="type" value="Друго" name="type">
-                <label for="type">Друго</label>
-            </div>
-            <div class="mb-3">
-                <label for="location" class="form-label"><strong>Местоположение</strong></label>
-                <input type="text" class="form-control" id="location" placeholder="Въведете местоположение на имота"
-                    name="location">
-            </div>
-            <div class="col-12">
-                <button type="submit" class="btn btn-primary">Филтрирай</button>
-            </div>
-        </form>
-
-    </section>
-
-    <section class="container" style="margin-top: 10px;" id="popular">
+    <section class="container" style="margin-top: 100px;" id="popular">
         <p class="pt-5">Актуално</p>
         <div class="d-flex">
             <h2>Продажби</h2>

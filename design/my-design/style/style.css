@@ -5,6 +5,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 
 .navbar a{
@@ -16,7 +17,6 @@
     padding: 1px 5px;
     font-size: 18px;
     line-height: 0.3;
-    background: #fff;
 }
 
 .w-100-height{
@@ -88,7 +88,6 @@
     line-height: 1.8;
     border-radius: 50%;
 }
-
 
 @media only screen and (max-width: 767px){
     .navbar-nav{
