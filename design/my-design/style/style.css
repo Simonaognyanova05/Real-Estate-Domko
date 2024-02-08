@@ -96,7 +96,24 @@
 .first, .second, .thirth, .four{
     display: inline-block;
 }
-
+#products{
+    position: relative;
+    display: inline-block;
+}
+#totalprice{
+    position: absolute;
+    display: inline-block;
+    margin-left: 30%;
+    width: 900px;
+}
+#totalprice p{
+   padding: 10px;
+   font-size: 20px;
+   display: inline-block;
+}
+#end-order{
+    text-align: center;
+}
 @media only screen and (max-width: 767px){
     .navbar-nav{
         text-align: center;
@@ -113,7 +130,12 @@
     .carousel .card-bottom{
         display: none;
     }
-    
+    #totalprice{
+        margin-top: 1400px;
+        margin-bottom: 1400px;
+        margin-left: 0px;
+        width: 95%;
+    }
 }
 
 .arrow-icon{
