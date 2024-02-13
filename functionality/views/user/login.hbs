@@ -1,6 +1,6 @@
 <h1 class="page-title">Вход</h1>
 
-<div class="about-form">
+{{!-- <div class="about-form">
     <form action="/user/login" method="POST" id="login">
         <div class="mb-3">
             <label for="username" class="form-label">Потребителско име</label>
@@ -15,4 +15,43 @@
             <button type="submit" class="btn btn-primary">Влизане</button>
         </div>
     </form>
+</div> --}}
+
+<div class="container mb-5">
+    <div class="col-md-12 col-lg-8">
+        <h1 class="text-single">Контакти</h1>
+    </div>
 </div>
+
+<section id="loginForm">
+    <div class="contact mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <h3>Вход</h3>
+
+                    <form action="/user/login" method="POST" id="login">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="your-name" class="form-label">Потребителско име</label>
+                                <input type="text" class="form-control" id="username"
+                                    placeholder="Въведете потребителско име" name="username" required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="password" class="form-label">Парола</label>
+                                <input type="password" class="form-control" id="password" placeholder="Въведете парола"
+                                    name="password" required>
+                            </div>
+
+                            <div class="mt-3 mb-5">
+                                <button class="btn text-white bg-dark px-3 btn-lg rounded-0">Влизане</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

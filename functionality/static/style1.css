@@ -114,6 +114,19 @@
 #end-order{
     text-align: center;
 }
+#loginForm{
+    padding:20px;
+    padding-left: 50px;
+    margin: auto;
+    margin-top: 30px;
+    background-color: rgb(193, 193, 204);
+    width: 50%;
+    border-radius: 20px;
+    font-size: 20px;
+}
+#loginForm .col-md-6{
+    width: 1000px;
+}
 @media only screen and (max-width: 767px){
     .navbar-nav{
         text-align: center;
@@ -136,8 +149,13 @@
         margin-left: 0px;
         width: 95%;
     }
-    #aboutContainer{
+    #loginForm{
+        margin: auto;
         margin-top: 100px;
+        background-color: rgb(193, 193, 204);
+        width: 100%;
+        border-radius: 20px;
+        font-size: 20px;
     }
 }
 
