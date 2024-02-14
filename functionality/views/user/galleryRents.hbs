@@ -1,4 +1,4 @@
-<h1 class="page-title">Галерия</h1>
+{{!-- <h1 class="page-title">Галерия</h1>
 
 <p>Тип на имота: {{rentData.type}}</p>
 <p>Местоположение: {{rentData.location}}</p>
@@ -15,23 +15,111 @@
 <img src="{{rentData.img5}}" alt="img5">
 
 <section id="cartAdding">
-<form action="/addToCart" method="POST">
-    <input type="hidden" value="{{rentData.type}}" name="type">
-    <input type="hidden" value="{{rentData.location}}" name="location">
-    <input type="hidden" value="{{rentData.address}}" name="address">
-    <input type="hidden" value="{{rentData.floors}}" name="floors">
-    <input type="hidden" value="{{rentData.rooms}}" name="rooms">
-    <input type="hidden" value="{{rentData.squareMeters}}" name="squareMeters">
-    <input type="hidden" value="{{rentData.price}}" name="price">
-    <input type="hidden" value="{{rentData.priceForHour}}" name="priceForHour">
-    <input type="hidden" value="{{rentData.img1}}" name="img1">
-    <input type="hidden" value="{{rentData.img2}}" name="img2">
-    <input type="hidden" value="{{rentData.img3}}" name="img3">
-    <input type="hidden" value="{{rentData.img4}}" name="img4">
-    <input type="hidden" value="{{rentData.img5}}" name="img5">
-    
-    {{#if user}}
-    <button type="submit" class="btn btn-primary">Добави в количката</button>
-    {{/if}}
-</form>
+    <form action="/addToCart" method="POST">
+        <input type="hidden" value="{{rentData.type}}" name="type">
+        <input type="hidden" value="{{rentData.location}}" name="location">
+        <input type="hidden" value="{{rentData.address}}" name="address">
+        <input type="hidden" value="{{rentData.floors}}" name="floors">
+        <input type="hidden" value="{{rentData.rooms}}" name="rooms">
+        <input type="hidden" value="{{rentData.squareMeters}}" name="squareMeters">
+        <input type="hidden" value="{{rentData.price}}" name="price">
+        <input type="hidden" value="{{rentData.priceForHour}}" name="priceForHour">
+        <input type="hidden" value="{{rentData.img1}}" name="img1">
+        <input type="hidden" value="{{rentData.img2}}" name="img2">
+        <input type="hidden" value="{{rentData.img3}}" name="img3">
+        <input type="hidden" value="{{rentData.img4}}" name="img4">
+        <input type="hidden" value="{{rentData.img5}}" name="img5">
+
+        {{#if user}}
+        <button type="submit" class="btn btn-primary">Добави в количката</button>
+        {{/if}}
+    </form>
+</section> --}}
+
+<section class="container" style="margin-top: 100px;" id="popular">
+    <p class="pt-5">Галерия</p>
+    <div class="d-flex">
+        <h2>{{rentData.type}}</h2>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-2">
+        <div class="col">
+            <div class="card border-0 rounded-0">
+                <img src="{{rentData.img1}}" alt="img1" class="card-img-top rounded-0">
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card border-0 rounded-0">
+                <img src="{{rentData.img2}}" alt="img2" class="card-img-top rounded-0">
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card border-0 rounded-0">
+                <img src="{{rentData.img3}}" alt="img3" class="card-img-top rounded-0">
+            </div>
+        </div>
+        <div class="col">
+            <div class="card border-0 rounded-0">
+                <img src="{{rentData.img4}}" alt="img4" class="card-img-top rounded-0">
+            </div>
+        </div>
+        <div class="col">
+            <div class="card border-0 rounded-0">
+                <img src="{{rentData.img5}}" alt="img5" class="card-img-top rounded-0">
+            </div>
+        </div>
+    </div>
 </section>
+
+<section class="container" style="margin-top: 100px;" id="info">
+    <div class="first">
+        <p><strong>Тип и име на имота:</strong> {{rentData.type}}</p>
+        <p><strong>Местоположение:</strong> {{rentData.location}}</p>
+    </div>
+
+    <div class="second">
+        <p><strong>Адрес:</strong> {{rentData.address}}</p>
+        <p><strong>Квадтратура:</strong> {{rentData.squareMeters}}</p>
+
+    </div>
+
+    <div class="thirth">
+        <p><strong>Брой етажи:</strong> {{rentData.floors}}</p>
+        <p><strong>Брой стаи:</strong> {{rentData.rooms}}</p>
+    </div>
+
+    <div class="four">
+        <p><strong>Цена:</strong> {{rentData.price}}</p>
+        <p><strong>Цена за оглед: </strong>{{rentData.priceForHour}}</p>
+    </div>
+
+  <section id="cartAdding">
+    <form action="/addToCart" method="POST">
+        <input type="hidden" value="{{rentData.type}}" name="type">
+        <input type="hidden" value="{{rentData.location}}" name="location">
+        <input type="hidden" value="{{rentData.address}}" name="address">
+        <input type="hidden" value="{{rentData.floors}}" name="floors">
+        <input type="hidden" value="{{rentData.rooms}}" name="rooms">
+        <input type="hidden" value="{{rentData.squareMeters}}" name="squareMeters">
+        <input type="hidden" value="{{rentData.price}}" name="price">
+        <input type="hidden" value="{{rentData.priceForHour}}" name="priceForHour">
+        <input type="hidden" value="{{rentData.img1}}" name="img1">
+        <input type="hidden" value="{{rentData.img2}}" name="img2">
+        <input type="hidden" value="{{rentData.img3}}" name="img3">
+        <input type="hidden" value="{{rentData.img4}}" name="img4">
+        <input type="hidden" value="{{rentData.img5}}" name="img5">
+
+        {{#if user}}
+        <div class="five">
+            <button type="submit" class="btn btn-primary" style="background-color: #000; border-color: beige">Добави в
+                количката</button>
+
+        </div>
+        {{/if}}
+    </form>
+</section>
+</section>
+
+
