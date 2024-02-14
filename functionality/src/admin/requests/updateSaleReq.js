@@ -12,10 +12,10 @@ const connectionParams = {
 async function updateSaleReq(req, res) {
     await mongoose.connect(dbUrl, connectionParams);
 
-    const { type, location, address, floors, rooms, squareMeters, price, priceForHour, img1, img2, img3, img4, img5 } = req.body;
+    const { type, location, address, floors, rooms, squareMeters, price, priceForHour, img1, img2, img3, img4, img5, img6 } = req.body;
 
     try {
-        await Sale.updateOne({ _id: req.params.saleId }, { $set: { type, location, address, floors, rooms, squareMeters, price, priceForHour, img1, img2, img3, img4, img5  } });
+        await Sale.updateOne({ _id: req.params.saleId }, { $set: { type, location, address, floors, rooms, squareMeters, price, priceForHour, img1, img2, img3, img4, img5, img6  } });
         res.redirect('/admin/sales');      
     } catch (err) {
         console.log(err);
