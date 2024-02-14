@@ -14,6 +14,7 @@ const rentSchema = new mongoose.Schema({
     img3: {type: String, required: true},
     img4: {type: String, required: true},
     img5: {type: String, required: true},
+    img6: {type: String, required: true},
 });
 
 const Rent = mongoose.model('Rent', rentSchema);
