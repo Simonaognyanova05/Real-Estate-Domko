@@ -156,6 +156,23 @@
     font-size: 18px;
     text-decoration: none;
 }
+
+#namesOfUsers{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-decoration: none;
+}
+#namesOfUsers li{
+    text-decoration: none;
+    margin: 5px;
+    color: #000;
+    border-radius: 15px;
+}
+#namesOfUsers a{
+    text-decoration: none;
+    margin: 5px;
+    color: #000;
+}
 @media only screen and (max-width: 1200px) {
     .navbar-nav {
         text-align: center;
