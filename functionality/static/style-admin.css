@@ -140,9 +140,11 @@
 }
 
 #title-admin {
-    font-size: 100px;
-    line-height: 130px;
+    font-size: 80px;
+    font-weight: 300;
+    line-height: 110px;
     text-align: center;
+    padding-top: 400px;
 }
 
 #buttons{
@@ -186,6 +188,9 @@
     font-weight: 500;
     font-style: italic;
 }
+#admin-home{
+    margin-top: 130px
+}
 @media only screen and (max-width: 1200px) {
     .navbar-nav {
         text-align: center;
@@ -223,9 +228,8 @@
     }
 
     #title-admin {
-        margin-top: 50px;
         font-size: 50px;
-        line-height: 100px;
+        line-height: 80px;
         text-align: center;
     }
 }
