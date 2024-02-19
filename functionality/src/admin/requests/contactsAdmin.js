@@ -15,8 +15,8 @@ async function contactsAdmin(req, res) {
     const { title, address, phone, email } = req.body;
 
     try {
-        await Contacts.updateOne({ title }, { $set: { title, address, phone, email } });
-        res.redirect('/contacts');
+        await Contacts.updateOne({ $set: { title, address, phone, email } });
+        res.redirect('/admin/contacts');
     } catch (err) {
         console.log(err);
     } finally {
