@@ -152,13 +152,10 @@
 }
 #create-label{
     position: absolute;
-    right: 0;
-    top: 0;
     color: #000;
     font-size: 18px;
     text-decoration: none;
 }
-
 #namesOfUsers{
     margin-top: 30px;
     margin-bottom: 30px;
@@ -190,6 +187,9 @@
 }
 #admin-home{
     margin-top: 130px
+}
+.edit-delete{
+    margin: 10px;
 }
 @media only screen and (max-width: 1200px) {
     .navbar-nav {
