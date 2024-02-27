@@ -18,17 +18,26 @@ async function loginUser(req, res) {
     try {
         const user = await User.findOne({ username });
 
-        if(user){
+        if (user) {
             const comparedPass = await bcrypt.compare(password, user.hashedPass);
 
-            if(comparedPass){
+            if (comparedPass) {
                 req.session.user = user.toJSON();
                 res.redirect('/');
             } else {
-                res.send('Невалидни данни!');
+                res.send(`<script>
+            alert('Невалидни данни');
+            window.location.href = '/login';
+            </script>`);
             }
         } else {
-            res.send('Невалидни данни!');
+            
+            res.send(`<script>
+        
+            alert('Невалидни данни');
+            window.location.href = '/login';
+            </script>`);
+
         }
     } catch (e) {
         console.log(e);
