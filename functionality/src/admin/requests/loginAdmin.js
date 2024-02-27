@@ -25,10 +25,18 @@ async function loginAdmin(req, res) {
                 req.session.admin = admin.toJSON();
                 res.redirect('/admin');
             } else {
-                res.send('Невалидни данни!')
+                res.send(`<script>
+        
+                alert('Невалидни данни!');
+                window.location.href = '/admin/login';
+                </script>`);
             }
         } else {
-            res.send('Невалидни данни!')
+            res.send(`<script>
+        
+                alert('Невалидни данни!');
+                window.location.href = '/admin/login';
+                </script>`);
 
         }
     } catch (e) {
