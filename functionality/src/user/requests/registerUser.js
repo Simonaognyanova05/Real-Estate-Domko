@@ -16,15 +16,27 @@ async function registerUser(req, res) {
     const { username, password, email, rePass } = req.body;
 
     if (password != rePass) {
-        res.send('Паролите не съвпадат!');
+        res.send(`<script>
+        
+        alert('Паролите не съвпадат!');
+        window.location.href = '/register';
+        </script>`);
         return;
     }
     if (password.length < 6) {
-        res.send('Паролата трябва да е минимум 6 символа!');
+        res.send(`<script>
+        
+        alert('Паролата трябва да е минимум 6 символа!');
+        window.location.href = '/register';
+        </script>`);
         return;
     }
     if (username.length < 5) {
-        res.send('Потребителското име трябва да е минимум 5 символа!');
+        res.send(`<script>
+        
+        alert('Потребителското име трябва да е минимум 5 символа!');
+        window.location.href = '/register';
+        </script>`);
         return;
     }
 
