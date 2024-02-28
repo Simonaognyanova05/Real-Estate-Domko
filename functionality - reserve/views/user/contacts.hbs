@@ -1,0 +1,174 @@
+<h1 class="page-title">{{contactsData.title}}</h1>
+
+{{!-- <section class="contact-info">
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                    aria-expanded="true" aria-controls="collapseOne">
+                    Адрес
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <strong>{{contactsData.address}}</strong>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Телефон
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <strong>{{contactsData.phone}}</strong>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Имейл
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <strong>{{contactsData.email}}</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact-form">
+    <h2 class="contact-subtitle">Пишете ни</h2>
+    <form action="/sentMessage" method="POST"action="/sentMessage" method="POST">
+        <div class="mb-3">
+            <label for="names" class="form-label">Име и фамилия</label>
+            <input type="text" class="form-control" id="names" name="names">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email">
+        </div>
+        <div class="mb-3">
+            <label for="message" class="form-label">Вашето съобщение</label>
+            <textarea class="form-control" id="message" name="message"></textarea>
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Изпрати</button>
+        </div>
+    </form>
+</section> --}}
+
+   <section>
+
+
+        <section class="about section-padding" style="margin-top: 40px;" id="question">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-5 col-md-12 col-12 mt-md-5">
+                        <div class="about-text">
+                            <p>Въпроси</p>
+                            <h2>Посетете ни <br> или ни пишете</h2>
+                        </div>
+                    </div>
+
+                    <div class="accordion col-lg-7 mt-3 " id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <strong>Адрес</strong>
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    {{contactsData.address}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <strong>Телефон</strong>
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    {{contactsData.phone}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    <strong>Имейл</strong>
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    {{contactsData.email}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container mb-5">
+            <div class="col-md-12 col-lg-8">
+                <h1 class="text-single">{{contactsData.title}}</h1>
+            </div>
+        </div>
+
+        <div class="contact mt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <form action="/sentMessage" method="POST">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="your-name" class="form-label">Име и фалимия</label>
+                                    <input type="text" class="form-control" id="names" name="names" required>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="your-surname" class="form-label">Имейл</label>
+                                    <input type="text" class="form-control" id="email" name="email"
+                                        required>
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="your-subject" class="form-label">Вашето съобщение</label>
+                                    <textarea id="message" name="message" class="form-control" rows="5"
+                                        required></textarea>
+                                </div>
+
+                                <div class="mt-3 mb-5">
+                                    <button class="btn text-white bg-dark px-3 btn-lg rounded-0">Изпрати</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div id="map" class="contact-map col-lg-5 mb-4">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23878.42774372252!2d23.705076503475087!3d41.57349791729922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14abbf8a6d9cd285%3A0x3e180144a8b55644!2sGotse%20Delchev!5e0!3m2!1sen!2sbg!4v1703785211537!5m2!1sen!2sbg"
+                            width="530" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
