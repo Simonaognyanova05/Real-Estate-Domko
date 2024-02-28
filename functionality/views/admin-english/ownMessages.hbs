@@ -1,0 +1,28 @@
+<section id="loginForm" style="margin-top: 150px;">
+  <div class="contact mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+          <h3>Съобщение</h3>
+
+          {{#each messages}}
+
+          <ul class="list-group" id="ownMessage">
+            <li>
+              <p><span class="message">Изпратено от: </span>{{this.names}}</p>
+            </li>
+            <li>
+              <p><span class="message">Имейл: </span>{{this.email}}</p>
+            </li>
+            <li>
+              <p><span class="message">Съобщение: </span>{{this.message}}</p>
+            </li>
+          </ul>
+          {{else}}
+          <p>Няма изпратено съобщение от този потребител</p>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

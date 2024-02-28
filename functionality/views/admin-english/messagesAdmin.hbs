@@ -1,0 +1,27 @@
+<section id="loginForm" style="margin-top: 150px;">
+    <div class="contact mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <h3>Потребителите, оставили съобщения</h3>
+
+
+                    <ul class="list-group" id="namesOfUsers">
+                        {{#each users}}
+                        <li class="list-group-item">
+                            <a href="/visit/messagesAdmin/{{this._id}}">
+                                {{this.names}}
+                            </a>
+                            <a href="/check/reservation/{{this._id}}">
+                                <i class="fa-solid fa-check mark"></i>
+                            </a>
+                        </li>
+                        {{else}}
+                        <li class="list-group-item">Няма съобщения</li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

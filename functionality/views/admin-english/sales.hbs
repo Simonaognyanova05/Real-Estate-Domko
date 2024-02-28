@@ -1,0 +1,43 @@
+<section class="container" style="margin-top: 150px;" id="popular">
+
+    <div class="d-flex">
+        <h2>Продажби</h2>
+    </div>
+    <p class="pt-5"><a href="/admin/createSale" id="create-label"><i class="fa-solid fa-plus"></i> Добави имот</a></p>
+
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-2">
+        {{#each sales}}
+        <div class="col">
+            <div class="card border-0 rounded-0">
+                <img src="{{this.img1}}" alt="image1" class="card-img-top rounded-0" style="height: 300px;">
+                <div class="card-body">
+                    <p class="card-text text-muted">{{this.type}}</p>
+                    <p class="card-text text-muted">гр./с. {{this.location}}</p>
+
+
+                    <div class="d-flex justify-content-center mt-3">
+                        <p class="mx-4 text-muted card-text"><i class="fa-solid fa-money-bill"></i> Цена за оглед:
+                            {{this.priceForHour}} лв.</p>
+                        <p class="mx-4 text-muted card-text"><i class="fa-solid fa-money-bill"></i> Цена:
+                            {{this.price}} лв.</p>
+                    </div>
+
+                    <div class="d-flex my-2">
+                        <a href="/admin/updateSale/{{this._id}}"
+                            class="btn btn-lg text-white bg-dark px-4 rounded-0 edit-delete">Редактиране</a>
+                        <a href="/deleteSale/{{this._id}}"
+                            class="btn btn-lg text-white bg-dark px-4 rounded-0 edit-delete">Изтриване</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{else}}
+        <p>Няма създадени имоти под наем</p>
+        {{/each}}
+
+
+    </div>
+
+</section>
