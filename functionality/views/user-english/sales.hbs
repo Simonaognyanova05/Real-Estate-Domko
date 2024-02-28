@@ -1,30 +1,30 @@
 <section class="container" style="margin-top: 150px;" id="popular">
     <form action="/user/filterSales" method="POST" id="login">
         <div class="mb-3">
-            <p><strong>Изберете желан тип имот</strong></p>
-            <input type="radio" id="type" value="Апартамент" name="type">
-            <label for="type">Апартамент</label>
+            <p><strong>Select desired property type</strong></p>
+            <input type="radio" id="type" value="Apartment" name="type">
+            <label for="type">Apartment</label>
 
-            <input type="radio" id="type" value="Къща" name="type">
-            <label for="type">Къща</label>
+            <input type="radio" id="type" value="House" name="type">
+            <label for="type">House</label>
 
-            <input type="radio" id="type" value="Гараж" name="type">
-            <label for="type">Гараж</label>
+            <input type="radio" id="type" value="Garage" name="type">
+            <label for="type">Garage</label>
 
-            <input type="radio" id="type" value="Офис" name="type">
-            <label for="type">Офис</label>
+            <input type="radio" id="type" value="Office" name="type">
+            <label for="type">Office</label>
 
-            <input type="radio" id="type" value="Друго" name="type">
-            <label for="type">Друго</label>
+            <input type="radio" id="type" value="Other" name="type">
+            <label for="type">Other</label>
         </div>
         <div class="mb-3">
-            <label for="location" class="form-label"><strong>Местоположение</strong></label>
-            <input type="text" class="form-control" id="location" placeholder="Въведете местоположение на имота"
+            <label for="location" class="form-label"><strong>Location</strong></label>
+            <input type="text" class="form-control" id="location" placeholder="Enter property location"
                 name="location">
         </div>
         <div class="col-12">
             <button type="submit" class="btn btn-primary"
-                style="background-color: #000; border-color: beige">Филтрирай</button>
+                style="background-color: #000; border-color: beige">Filter</button>
         </div>
     </form>
 
@@ -32,9 +32,9 @@
 
 <section class="container" style="margin-top: 10px;" id="popular">
 
-    <p class="pt-5">Актуално</p>
+    <p class="pt-5">Current</p>
     <div class="d-flex">
-        <h2>Продажби</h2>
+        <h2>Sales</h2>
     </div>
 
 
@@ -44,28 +44,28 @@
             <div class="card border-0 rounded-0">
                 <img src="{{this.img1}}" alt="image1" class="card-img-top rounded-0" style="height: 300px;">
                 <div class="card-body">
-                    <p class="card-text text-muted">Име на имот: {{this.type}}</p>
+                    <p class="card-text text-muted">Property type: {{this.type}}</p>
 
                     <div class="d-flex justify-content-center mt-3">
-                        <p class="mx-4 text-muted card-text"><i class="fa-solid fa-location-dot"></i> гр./с.
+                        <p class="mx-4 text-muted card-text"><i class="fa-solid fa-location-dot"></i> Location:
                             {{this.location}}</p>
-                        <p class="mx-4 text-muted card-text"><i class="fa-solid fa-money-bill"></i> Оглед:
-                            {{this.priceForHour}} лв.</p>
+                        <p class="mx-4 text-muted card-text"><i class="fa-solid fa-money-bill"></i> View:
+                            {{this.priceForHour}}$</p>
 
                     </div>
 
                     <div class="d-flex my-2">
                         <a href="/sales/gallery/{{this._id}}"
-                            class="btn btn-lg text-white bg-dark px-4 rounded-0">Галерия</a>
+                            class="btn btn-lg text-white bg-dark px-4 rounded-0">Gallery</a>
 
-                        <h5 class="my-auto ms-auto">Цена: {{this.price}} лв.</h5>
+                        <h5 class="my-auto ms-auto">Price: {{this.price}}$</h5>
                     </div>
                 </div>
             </div>
         </div>
         {{else}}
         <div class="alert alert-light" role="alert">
-            Няма създадени имоти за продажба
+            There are no properties created for sale
         </div>
         {{/each}}
     </div>
@@ -75,8 +75,8 @@
     <div class="container pt-5">
         <div class="row" style="margin-top: 25%;">
             <div class="col-lg-4">
-                <h2 style="color: #b5b5b5;">Къщи в изискани квартали</h2>
-                <p style="color: #b5b5b5;">Апартаменти в луксозни резиденции</p>
+                <h2 style="color: #b5b5b5;">Houses in sophisticated neighborhoods</h2>
+                <p style="color: #b5b5b5;">Apartments in luxury residences</p>
             </div>
 
             <div class="col-lg-8 mb-5">
