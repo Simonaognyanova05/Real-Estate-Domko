@@ -221,5 +221,5 @@ app.get('/admin/messagesAdmin', async (req, res) => await usersMessages(req, res
 app.get('/visit/messagesAdmin/:userId', async (req, res) => await ownMessages(req, res));
 
 //user-english
-app.get('/homeEngl', userHomeEngl)
+app.get('/homeEngl', userHomeEngl);
 app.listen(3000);
