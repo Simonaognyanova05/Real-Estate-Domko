@@ -18,6 +18,8 @@ const userReserve = require('./src/user/reserve');
 const userRegister = require('./src/user/register');
 const userLogin = require('./src/user/login');
 const filterRents = require('./src/user/filterRents');
+const tenksForOrder = require('./src/user/tenks');
+
 
 const { filterRentsReq } = require('./src/user/requests/filterRentsReq');
 
@@ -133,6 +135,8 @@ app.post('/user/filterSales', async (req, res) => {
     await filterSalesReq(req, res) 
 });
 app.post('/sentMessage', async (req, res) => await sentMessage(req, res));
+app.get('/tenks', tenksForOrder);
+
 
 //admin
 app.get('/admin', adminHome);

@@ -21,7 +21,7 @@ async function reservation(req, res) {
         })
         await reserve.save();
         await clearCart(req, res);
-        res.redirect('/');
+        res.redirect('/tenks');
     } catch (e) {
         console.log(e);
     }

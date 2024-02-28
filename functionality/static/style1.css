@@ -139,7 +139,21 @@
 #loginForm .col-md-6 {
     width: 1000px;
 }
-
+.tenks-for-order{
+    margin-top: 160px;
+    text-align: center;
+}
+.tenks-for-order h1{
+    font-weight: 500;
+    letter-spacing: 5px;
+    padding: 10px;
+}
+.tenks-for-order p{
+    font-weight: 100;
+    letter-spacing: 3px;
+    font-size: 20px;
+    padding: 10px;
+}
 @media only screen and (max-width: 1150px) {
     .navbar-nav {
         text-align: center;
