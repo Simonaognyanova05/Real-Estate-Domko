@@ -222,4 +222,7 @@ app.get('/visit/messagesAdmin/:userId', async (req, res) => await ownMessages(re
 
 //user-english
 app.get('/homeEngl', userHomeEngl);
+app.get('/rentsEngl', async(req, res) => {
+    await userRentEngl(res, res);
+})
 app.listen(3000);
