@@ -12,7 +12,7 @@ async function clearCart(req, res) {
 
     try {
         await Cart.deleteMany({ ownerId: req.session.user._id });
-        res.redirect('/');
+        res.redirect('/tenks');
     } catch (e) {
         console.log(e);
     }
