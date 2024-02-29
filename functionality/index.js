@@ -68,21 +68,6 @@ const usersMessages = require('./src/admin/usersMessages');
 const { sentMessage } = require('./src/user/requests/sentMessage');
 const ownMessages = require('./src/admin/ownMessages');
 
-//user-english
-const userHomeEngl = require('./src/user-english/home');
-const userAboutEngl = require('./src/user-english/about');
-const userRentEngl = require('./src/user-english/rent');
-const userSalesEngl = require('./src/user-english/sales');
-const userGalleryRentsEngl = require('./src/user-english/galleryRents');
-const userGallerySalesEngl = require('./src/user-english/gallerySale');
-const userContactsEngl = require('./src/user-english/contacts');
-const userBagEngl = require('./src/user-english/bag');
-const userReserveEngl = require('./src/user-english/reserve');
-const userRegisterEngl = require('./src/user-english/register');
-const userLoginEngl = require('./src/user-english/login');
-const filterRentsEngl = require('./src/user-english/filterRents');
-const tenksForOrderEngl = require('./src/user-english/tenks');
-
 const app = express();
 
 const hbs = exphbs.create({ extname: 'hbs', defaultLayout: 'main', layoutsDir: path.join(__dirname, 'views/layouts/') });
@@ -219,15 +204,5 @@ app.get('/check/reservation/:userId',  (req, res) =>  checkReservation(req, res)
 app.delete('/check/reservation/:userId',  async (req, res) => await checkReservationReq(req, res));
 app.get('/admin/messagesAdmin', async (req, res) => await usersMessages(req, res));
 app.get('/visit/messagesAdmin/:userId', async (req, res) => await ownMessages(req, res));
-
-//user-english
-app.get('/homeEngl', userHomeEngl);
-app.get('/rentsEngl', async(req, res) => {
-    await userRentEngl(res, res);
-})
-app.get('/salesEngl', async(req, res) => {
-    await userSalesEngl(res, res);
-})
-
 
 app.listen(3000);
