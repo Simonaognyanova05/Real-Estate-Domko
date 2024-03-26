@@ -13,7 +13,7 @@ const connectionParams = {
 async function registerUser(req, res) {
     await mongoose.connect(dbUrl, connectionParams);
 
-    const { username, password, email, rePass } = req.body;
+    const { username, password, email, ages, location, profileImg, interests, rePass } = req.body;
 
     if (password != rePass) {
         res.send(`<script>
@@ -43,7 +43,7 @@ async function registerUser(req, res) {
     const hashedPass = await bcrypt.hash(password, 10);
     try {
         const user = new User({
-            username, email, hashedPass
+            username, email, hashedPass, ages, location, profileImg, interests
         })
         await user.save();
         req.session.user = user;
