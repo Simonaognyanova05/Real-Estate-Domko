@@ -162,6 +162,7 @@
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
 }
 #userProfileTitle {
     text-align: center;
@@ -171,6 +172,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    margin: 50px;
 }
 .profile img {
     width: 150px;
@@ -190,7 +192,9 @@
 .profile-info p {
     margin: 5px 0;
 }
-
+#interests{
+    margin-left: 50px;
+}
 @media only screen and (max-width: 1150px) {
     .navbar-nav {
         text-align: center;
