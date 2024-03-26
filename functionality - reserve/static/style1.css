@@ -154,6 +154,47 @@
     font-size: 20px;
     padding: 10px;
 }
+.user-profile-container {
+    max-width: 800px;
+    margin: 20px auto;
+    margin-top: 150px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+}
+#userProfileTitle {
+    text-align: center;
+}
+.profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    margin: 50px;
+}
+.profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.profile-info {
+    flex: 1;
+    margin-left: 20px;
+}
+.profile-info h2 {
+    margin-top: 0;
+}
+.profile-info p {
+    margin: 5px 0;
+}
+#interests{
+    margin-left: 50px;
+}
 @media only screen and (max-width: 1150px) {
     .navbar-nav {
         text-align: center;

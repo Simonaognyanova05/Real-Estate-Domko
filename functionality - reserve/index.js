@@ -19,10 +19,11 @@ const userRegister = require('./src/user/register');
 const userLogin = require('./src/user/login');
 const filterRents = require('./src/user/filterRents');
 const tenksForOrder = require('./src/user/tenks');
+const userProfilePage = require('./src/user/userProfileController');
+
 
 
 const { filterRentsReq } = require('./src/user/requests/filterRentsReq');
-
 const { getUserRents } = require('./src/user/requests/getUserRents');
 const { addToCart } = require('./src/user/requests/addToCart');
 const { removeFromCart } = require('./src/user/requests/removeFromCart');
@@ -136,7 +137,7 @@ app.post('/user/filterSales', async (req, res) => {
 });
 app.post('/sentMessage', async (req, res) => await sentMessage(req, res));
 app.get('/tenks', tenksForOrder);
-
+app.get('/userProfile', userProfilePage);
 
 //admin
 app.get('/admin', adminHome);
