@@ -69,6 +69,7 @@ const { checkReservationReq } = require('./src/admin/requests/checkReservationRe
 const usersMessages = require('./src/admin/usersMessages');
 const { sentMessage } = require('./src/user/requests/sentMessage');
 const ownMessages = require('./src/admin/ownMessages');
+const { addToFavourites } = require('./src/user/requests/addToFav');
 
 const app = express();
 
@@ -104,6 +105,10 @@ app.get('/sales/gallery/:saleId', userGallerySales);
 app.post('/addToCart', async(req, res) => {
     await addToCart(req, res);
 })
+app.post('/addToFavourites', async(req, res) => {
+    await addToFavourites(req, res);
+})
+
 
 app.get('/contacts', async (req, res) => {
     await userContacts(req, res);

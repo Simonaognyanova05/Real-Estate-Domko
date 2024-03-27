@@ -90,4 +90,33 @@
             {{/if}}
         </form>
     </section>
+
+     <section id="cartAdding">
+        <form action="/addToFavourites" method="POST">
+            <input type="hidden" value="{{rentData.type}}" name="type">
+            <input type="hidden" value="{{rentData.location}}" name="location">
+            <input type="hidden" value="{{rentData.address}}" name="address">
+            <input type="hidden" value="{{rentData.floors}}" name="floors">
+            <input type="hidden" value="{{rentData.rooms}}" name="rooms">
+            <input type="hidden" value="{{rentData.squareMeters}}" name="squareMeters">
+            <input type="hidden" value="{{rentData.price}}" name="price">
+            <input type="hidden" value="{{rentData.priceForHour}}" name="priceForHour">
+            <input type="hidden" value="{{rentData.img1}}" name="img1">
+            <input type="hidden" value="{{rentData.img2}}" name="img2">
+            <input type="hidden" value="{{rentData.img3}}" name="img3">
+            <input type="hidden" value="{{rentData.img4}}" name="img4">
+            <input type="hidden" value="{{rentData.img5}}" name="img5">
+            <input type="hidden" value="{{rentData.img6}}" name="img6">
+
+
+            {{#if user}}
+            <div class="five">
+                <button type="submit" class="btn btn-primary" style="background-color: #000; border-color: beige">Добави
+                    в
+                    любими</button>
+
+            </div>
+            {{/if}}
+        </form>
+    </section>
 </section>
