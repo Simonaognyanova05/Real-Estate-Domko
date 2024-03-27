@@ -199,7 +199,8 @@
 .container-products {
     max-width: 800px;
     margin: 20px auto;
-    margin-top: 150px;
+    margin-top: 200px;
+    margin-bottom: 200px;
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
@@ -230,6 +231,10 @@
 }
 #favourites-link{
     text-decoration: none;
+}
+.no-favourites{
+    font-size: 25px;
+    margin: 30px;
 }
 @media only screen and (max-width: 1150px) {
     .navbar-nav {

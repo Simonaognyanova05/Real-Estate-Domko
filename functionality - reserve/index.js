@@ -14,6 +14,7 @@ const userGalleryRents = require('./src/user/galleryRents');
 const userGallerySales = require('./src/user/gallerySale');
 const userContacts = require('./src/user/contacts');
 const userBag = require('./src/user/bag');
+const userFavourites = require('./src/user/favourites');
 const userReserve = require('./src/user/reserve');
 const userRegister = require('./src/user/register');
 const userLogin = require('./src/user/login');
@@ -69,6 +70,9 @@ const { checkReservationReq } = require('./src/admin/requests/checkReservationRe
 const usersMessages = require('./src/admin/usersMessages');
 const { sentMessage } = require('./src/user/requests/sentMessage');
 const ownMessages = require('./src/admin/ownMessages');
+const { addToFavourites } = require('./src/user/requests/addToFav');
+const { removeFromFavourites } = require('./src/user/requests/removeFromFavourites');
+const { userRemoveItemFav } = require('./src/user/userRemoveItemFav');
 
 const app = express();
 
@@ -104,6 +108,10 @@ app.get('/sales/gallery/:saleId', userGallerySales);
 app.post('/addToCart', async(req, res) => {
     await addToCart(req, res);
 })
+app.post('/addToFavourites', async(req, res) => {
+    await addToFavourites(req, res);
+})
+
 
 app.get('/contacts', async (req, res) => {
     await userContacts(req, res);
@@ -120,9 +128,16 @@ app.get('/logout', (req, res) => {
     logout(req, res);
 });
 app.get('/bag', userBag);
+app.get('/favourites', userFavourites);
+
 app.get('/removeFromCart/:itemId', userRemoveItem)
 app.delete('/removeFromCart/:itemId', async (req, res) => {
     await removeFromCart(req, res);
+});
+
+app.get('/removeFromFavourites/:itemId', userRemoveItemFav)
+app.delete('/removeFromFavourites/:itemId', async (req, res) => {
+    await removeFromFavourites(req, res);
 });
 
 app.get('/reserve', async (req, res) => await userReserve(req, res));

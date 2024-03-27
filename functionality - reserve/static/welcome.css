@@ -34,12 +34,12 @@ html, body {
     left: 50%; 
     transform: translateX(-50%); 
     color: white;
-    font-size: 60px; 
+    font-size: 70px; 
     text-align: center;
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
     line-height: 100px;
-    letter-spacing: 3px;
+    letter-spacing: 5px;
     text-transform: uppercase;
 }
 
@@ -53,13 +53,13 @@ html, body {
     justify-content: center;
 }
 
-.bulgaria, .english {
+.bulgaria {
     background-color: rgb(202, 198, 225);
     color: rgb(38, 38, 69);
     border: 2px solid;
     border-radius: 20px;
     border: none;
-    padding: 10px 25px;
+    padding: 10px 55px;
     margin: 30px;
     text-decoration: none;
     font-size: 20px;
