@@ -237,7 +237,13 @@
     margin-left: 20px;
     font-size: 18px;
 }
+.about-title{
+    margin-bottom: 25px;
+}
 
+.about-info{
+    font-size: 20px;
+}
 @media only screen and (max-width: 1150px) {
     .navbar-nav {
         text-align: center;
