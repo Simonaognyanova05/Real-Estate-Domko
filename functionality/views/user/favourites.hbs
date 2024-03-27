@@ -1,17 +1,28 @@
 <div class="container-products">
     <h1 id="favourites-title">Любими имоти</h1>
-
     {{#each favouritesData}}
-    <div class="product">
-        <img src="{{this.img1}}" alt="Продукт" id="favourrite-img">
-        <h2>{{this.type}}</h2>
-        <p>Местоположение: {{this.location}}</p>
-        <p>Адрес: {{this.address}}</p>
-        <a href="/removeFromFavourites/{{this._id}}" class="btn btn-primary"
-            style="background-color: #FC5C5C; border-color: beige">Премахни</a>
+
+    <div class="card mb-3" id="favourite-card">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="{{this.img1}}" class="img-fluid rounded-start" alt="Image"
+                    style="height: 220px; width: 220px;">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{this.type}}</h5>
+                    <p class="card-text">Местоположение: {{this.location}}</p>
+                    <p class="card-text">Адрес: {{this.address}}</p>
+                    <p class="card-text">Цена за оглед: {{this.priceForHour}} лв.</p>
+                    <a href="/removeFromFavourites/{{this._id}}" class="btn btn-primary"
+                        style="background-color: #FC5C5C; border-color: beige">Премахни</a>
+
+
+                </div>
+            </div>
+        </div>
     </div>
     {{else}}
     <p class="no-favourites">Няма добавени имоти в любими</p>
     {{/each}}
-
 </div>
