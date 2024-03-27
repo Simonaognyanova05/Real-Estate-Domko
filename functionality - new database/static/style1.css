@@ -139,21 +139,25 @@
 #loginForm .col-md-6 {
     width: 1000px;
 }
-.tenks-for-order{
+
+.tenks-for-order {
     margin-top: 160px;
     text-align: center;
 }
-.tenks-for-order h1{
+
+.tenks-for-order h1 {
     font-weight: 500;
     letter-spacing: 5px;
     padding: 10px;
 }
-.tenks-for-order p{
+
+.tenks-for-order p {
     font-weight: 100;
     letter-spacing: 3px;
     font-size: 20px;
     padding: 10px;
 }
+
 .user-profile-container {
     max-width: 800px;
     margin: 20px auto;
@@ -164,9 +168,11 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     font-size: 20px;
 }
+
 #userProfileTitle {
     text-align: center;
 }
+
 .profile {
     display: flex;
     justify-content: space-between;
@@ -174,6 +180,7 @@
     margin-bottom: 20px;
     margin: 50px;
 }
+
 .profile img {
     width: 150px;
     height: 150px;
@@ -182,54 +189,60 @@
     border: 3px solid #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 .profile-info {
     flex: 1;
     margin-left: 20px;
 }
+
 .profile-info h2 {
     margin-top: 0;
 }
+
 .profile-info p {
     margin: 5px 0;
 }
-#interests{
+
+#interests {
     margin-left: 50px;
 }
 
 .container-products {
     max-width: 800px;
     margin: 20px auto;
-    margin-top: 150px;
+    margin-top: 200px;
+    margin-bottom: 100px;
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 #favourites-title {
     text-align: center;
 }
-.product {
-    margin-bottom: 20px;
 
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-}
-.product img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-.product h2 {
-    margin-top: 0;
-}
-
-#favourrite-img{
-    width: 200px;
-    height: 200px;
-}
-#favourites-link{
+#favourites-link {
     text-decoration: none;
+}
+
+.no-favourites {
+    font-size: 25px;
+    margin: 30px;
+}
+
+#favourite-card {
+    max-width: 600px;
+    margin-top: 30px;
+    margin-left: 20px;
+    font-size: 18px;
+}
+.about-title{
+    margin-bottom: 25px;
+}
+
+.about-info{
+    font-size: 20px;
 }
 @media only screen and (max-width: 1150px) {
     .navbar-nav {
