@@ -1,15 +1,16 @@
 <div class="container-products">
     <h1 id="favourites-title">Любими продукти</h1>
     
+    {{#each favouritesData}}
     <div class="product">
-        <img src="product1.jpg" alt="Продукт 1">
-        <h2>Продукт 1</h2>
-        <p>Описание на продукт 1.</p>
-    </div>
+        <img src="{{this.img1}}" alt="Продукт" id="favourrite-img">
+        <h2>{{this.type}}</h2>
+        <p>Местоположение: {{this.location}}</p>
+        <p>Адрес: {{this.address}}</p>
 
-    <div class="product">
-        <img src="product2.jpg" alt="Продукт 2">
-        <h2>Продукт 2</h2>
-        <p>Описание на продукт 2.</p>
     </div>
+    {{else}}
+    <p>Няма добавени продукти в любими</p>
+    {{/each}}
+
 </div>
