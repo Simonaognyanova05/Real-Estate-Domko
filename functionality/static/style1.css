@@ -225,8 +225,8 @@
 }
 
 #favourrite-img{
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
 }
 @media only screen and (max-width: 1150px) {
     .navbar-nav {
