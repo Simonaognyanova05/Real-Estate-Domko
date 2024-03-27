@@ -228,6 +228,9 @@
     width: 200px;
     height: 200px;
 }
+#favourites-link{
+    text-decoration: none;
+}
 @media only screen and (max-width: 1150px) {
     .navbar-nav {
         text-align: center;

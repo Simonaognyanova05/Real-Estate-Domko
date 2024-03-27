@@ -12,6 +12,31 @@ async function addToFavourites(req, res) {
     const { type, location, address, floors, rooms, squareMeters, price, priceForHour, img1, img2, img3, img4, img5 } = req.body;
 
     try {
+        const existingProduct = await Favourites.findOne({
+            type: type.toString(),
+            location: location.toString(),
+            address: address.toString(),
+            floors: Number(floors),
+            rooms: Number(rooms),
+            squareMeters: Number(squareMeters),
+            price: Number(price),
+            priceForHour: Number(priceForHour),
+            img1: img1.toString(),
+            img2: img2.toString(),
+            img3: img3.toString(),
+            img4: img4.toString(),
+            img5: img5.toString(),
+            ownerId: req.session.user._id
+        });
+
+        if (existingProduct) {
+            res.send(`<script>
+            alert('Имотът вече е добавен в любими');
+            window.location.href = '/';
+            </script>`);
+            return;
+        }
+
         const favourites = new Favourites({
             type: type.toString(), location: location.toString(), address: address.toString(), floors: Number(floors), rooms: Number(rooms), squareMeters: Number(squareMeters), price: Number(price), priceForHour: Number(priceForHour), img1: img1.toString(), 
             img2: img2.toString(), img3: img3.toString(), img4: img4.toString(), img5: img5.toString(), ownerId: req.session.user._id

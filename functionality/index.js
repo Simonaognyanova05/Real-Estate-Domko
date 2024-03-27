@@ -71,6 +71,8 @@ const usersMessages = require('./src/admin/usersMessages');
 const { sentMessage } = require('./src/user/requests/sentMessage');
 const ownMessages = require('./src/admin/ownMessages');
 const { addToFavourites } = require('./src/user/requests/addToFav');
+const { removeFromFavourites } = require('./src/user/requests/removeFromFavourites');
+const { userRemoveItemFav } = require('./src/user/userRemoveItemFav');
 
 const app = express();
 
@@ -131,6 +133,11 @@ app.get('/favourites', userFavourites);
 app.get('/removeFromCart/:itemId', userRemoveItem)
 app.delete('/removeFromCart/:itemId', async (req, res) => {
     await removeFromCart(req, res);
+});
+
+app.get('/removeFromFavourites/:itemId', userRemoveItemFav)
+app.delete('/removeFromFavourites/:itemId', async (req, res) => {
+    await removeFromFavourites(req, res);
 });
 
 app.get('/reserve', async (req, res) => await userReserve(req, res));
