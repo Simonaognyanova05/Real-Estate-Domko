@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Rent = require('../../models/Rent');
 const filterRents = require('../filterRents');
 
-const dbUrl = 'mongodb+srv://domko:fSSNqd7zySE0aZdW@cluster0.soh1wrl.mongodb.net/';
+const dbUrl = 'mongodb+srv://domko:SmaH0gHdPhr1WyhB@domko.yxvsqww.mongodb.net/';
 
 const connectionParams = {
     useUnifiedTopology: true,

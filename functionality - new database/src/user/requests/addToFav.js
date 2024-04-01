@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 const Favourites = require('../../models/Favourites');
 
-const dbUrl = 'mongodb+srv://domko:<password>@domko.yxvsqww.mongodb.net/?retryWrites=true&w=majority&appName=domko';
+const dbUrl = 'mongodb+srv://domko:SmaH0gHdPhr1WyhB@domko.yxvsqww.mongodb.net/';
+
 const connectionParams = {
     useUnifiedTopology: true,
     useNewUrlParser: true
