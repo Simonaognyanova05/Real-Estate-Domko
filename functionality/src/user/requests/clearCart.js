@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 const Cart = require('../../models/Cart');
 
-const dbUrl = 'mongodb+srv://domko:fSSNqd7zySE0aZdW@cluster0.soh1wrl.mongodb.net/';
+const dbUrl = 'mongodb+srv://domko:SmaH0gHdPhr1WyhB@domko.yxvsqww.mongodb.net/';
+
 const connectionParams = {
     useUnifiedTopology: true,
     useNewUrlParser: true

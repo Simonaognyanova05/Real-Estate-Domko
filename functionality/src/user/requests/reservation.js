@@ -3,8 +3,8 @@ const Reserve = require('../../models/Reserve');
 const { clearCart } = require('./clearCart');
 const getTotalPrice = require('../requests/getTotalPriceInBag');
 
+const dbUrl = 'mongodb+srv://domko:SmaH0gHdPhr1WyhB@domko.yxvsqww.mongodb.net/';
 
-const dbUrl = 'mongodb+srv://domko:fSSNqd7zySE0aZdW@cluster0.soh1wrl.mongodb.net/';
 const connectionParams = {
     useUnifiedTopology: true,
     useNewUrlParser: true
